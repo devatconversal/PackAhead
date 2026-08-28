@@ -20,7 +20,7 @@ const FOLLOW_LINKS = [{ label: "LinkedIn", href: "#contact" }];
 export default function V2Footer() {
   return (
     <section id="contact" className={styles.section}>
-      <AuroraBackground variant="deep" />
+      <AuroraBackground />
       <div className={`container ${styles.inner}`}>
         <div className={styles.top}>
           <h2 className={styles.heading}>Stay close to the project</h2>

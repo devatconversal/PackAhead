@@ -11,7 +11,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 720px;
+  min-height: 100vh;
+  min-height: 100svh;
   padding: 40px 0 44px;
 }
 

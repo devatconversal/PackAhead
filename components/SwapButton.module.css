@@ -68,7 +68,7 @@
 }
 
 .light .main {
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 .light .arrow {
@@ -80,6 +80,6 @@
   color: #052018;
 }
 .light:hover .arrow {
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }

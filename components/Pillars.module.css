@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  background: var(--surface-alt);
+  background: var(--surface);
   padding: 110px 0;
 }
 
@@ -36,6 +36,14 @@
   box-shadow: 0 24px 48px -24px rgba(11, 18, 32, 0.25);
 }
 
+.cardBlue {
+  background: var(--blue);
+}
+
+.cardMint {
+  background: var(--mint);
+}
+
 .cardDark {
   background: var(--ink);
 }
@@ -44,6 +52,14 @@
   font-family: var(--font-mono), monospace;
   font-size: 13px;
   color: var(--blue);
+}
+
+.cardBlue .number {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cardMint .number {
+  color: rgba(5, 32, 24, 0.6);
 }
 
 .cardDark .number {
@@ -57,14 +73,27 @@
   color: var(--ink);
 }
 
+.cardBlue .cardTitle,
 .cardDark .cardTitle {
   color: #fff;
+}
+
+.cardMint .cardTitle {
+  color: #052018;
 }
 
 .cardText {
   font-size: 16px;
   line-height: 1.6;
   color: var(--ink-soft);
+}
+
+.cardBlue .cardText {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.cardMint .cardText {
+  color: rgba(5, 32, 24, 0.72);
 }
 
 .cardDark .cardText {
