@@ -1,0 +1,85 @@
+.group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.main {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 52px;
+  width: 52px;
+  border-radius: 12px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.track {
+  display: flex;
+  width: 104px;
+  transform: translateX(-52px);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrowIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+}
+
+.group:hover .track {
+  transform: translateX(0);
+}
+
+.dark .main {
+  background: var(--blue);
+  color: #fff;
+}
+.dark .arrow {
+  background: var(--mint);
+  color: #052018;
+}
+.dark:hover .main {
+  background: var(--mint);
+  color: #052018;
+}
+.dark:hover .arrow {
+  background: var(--blue);
+  color: #fff;
+}
+
+.light .main {
+  background: var(--ink);
+  color: #fff;
+}
+.light .arrow {
+  background: var(--mint);
+  color: #052018;
+}
+.light:hover .main {
+  background: var(--mint);
+  color: #052018;
+}
+.light:hover .arrow {
+  background: var(--ink);
+  color: #fff;
+}
