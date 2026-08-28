@@ -10,11 +10,6 @@
   font-size: 44px;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--ink);
-}
-
-.muted {
-  color: #9aa5b8;
 }
 
 @media (max-width: 900px) {

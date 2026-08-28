@@ -8,18 +8,15 @@ import Deliverables from "@/components/Deliverables";
 import Newsroom from "@/components/Newsroom";
 import Partners from "@/components/Partners";
 import Initiatives from "@/components/Initiatives";
-import V2Footer from "@/components/v2/V2Footer";
-import styles from "./page.module.css";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function HomeV2() {
   return (
     <main>
-      <div id="top" className={styles.stage}>
-        <V2HeroFrame>
-          <V2Hero />
-        </V2HeroFrame>
-        <About />
-      </div>
+      <V2HeroFrame>
+        <V2Hero />
+      </V2HeroFrame>
+      <About />
       <Statement />
       <Pillars />
       <Numbers />
@@ -27,7 +24,7 @@ export default function HomeV2() {
       <Newsroom />
       <Partners />
       <Initiatives />
-      <V2Footer />
+      <SiteFooter />
     </main>
   );
 }

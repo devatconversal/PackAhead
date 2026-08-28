@@ -35,6 +35,10 @@
   gap: 20px;
 }
 
+.logoWrap {
+  margin-left: -17px;
+}
+
 .tagline {
   max-width: 330px;
   font-size: 15px;

@@ -29,7 +29,9 @@ export default function SiteFooter() {
 
         <div className={styles.columns}>
           <div className={styles.brandCol}>
-            <Image src="/brand/logo-gradient.svg" alt="PackAhead" width={177} height={46} />
+            <div className={styles.logoWrap}>
+              <Image src="/brand/logo-gradient.svg" alt="PackAhead" width={220} height={57} />
+            </div>
             <p className={styles.tagline}>
               Sustainable cellulose-based flexible packaging powered by artificial
               intelligence.

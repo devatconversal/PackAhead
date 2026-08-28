@@ -1,17 +1,19 @@
 import styles from "./V2HeroFrame.module.css";
 
 /**
- * Frames the header in the same inset, rounded card used on the main
- * homepage. Unlike there, the border never animates away: the header
- * stays pinned in place as the visitor scrolls, and the light
- * background of the section that follows slides up and over it,
- * covering it like a curtain, instead of the header scrolling off.
+ * Frames the header as a permanently bordered, rounded card — top and
+ * bottom corners alike — that scrolls with the page like any normal
+ * section. Its background is attached to the viewport (background-
+ * attachment: fixed), so the card acts like a window onto a backdrop
+ * that doesn't move: as the card scrolls up and off, the scenery
+ * showing through it stays put. Unlike position:fixed, this is
+ * naturally clipped to the card's own rounded shape as it scrolls.
  */
 export default function V2HeroFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.stickyWrap}>
-      <div className={styles.outer}>
-        <div className={styles.frame}>{children}</div>
+    <div id="top" className={styles.outer}>
+      <div className={styles.frame}>
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );

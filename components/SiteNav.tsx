@@ -15,8 +15,8 @@ export default function SiteNav() {
         <Image
           src="/brand/logo-gradient.svg"
           alt="PackAhead"
-          width={177}
-          height={46}
+          width={204}
+          height={53}
           priority
         />
       </a>
