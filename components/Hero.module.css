@@ -3,10 +3,11 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 58vh;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100svh;
   padding-top: 40px;
-  padding-bottom: 56px;
+  padding-bottom: 64px;
 }
 
 .heading {
@@ -70,11 +71,14 @@
   }
 }
 
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 24px;
+  }
+}
+
 @media (max-width: 560px) {
   .heading {
     font-size: 38px;
-  }
-  .hero {
-    min-height: 50vh;
   }
 }

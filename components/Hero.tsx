@@ -1,4 +1,5 @@
 import SwapButton from "./SwapButton";
+import SiteNav from "./SiteNav";
 import styles from "./Hero.module.css";
 
 const PARTNER_WIDTHS = [128, 96, 146, 110, 132, 88, 120, 104];
@@ -6,6 +7,8 @@ const PARTNER_WIDTHS = [128, 96, 146, 110, 132, 88, 120, 104];
 export default function Hero() {
   return (
     <div className={`container ${styles.hero}`}>
+      <SiteNav />
+
       <div>
         <h1 className={styles.heading}>Advancing circular cellophane packaging.</h1>
         <div className={styles.subRow}>
@@ -15,19 +18,19 @@ export default function Hero() {
           </p>
           <SwapButton href="#about" label="DISCOVER THE PROJECT" variant="dark" />
         </div>
-      </div>
 
-      <div className={styles.marqueeMask}>
-        <div className={styles.marqueeTrack}>
-          <div className={styles.marqueeGroup}>
-            {PARTNER_WIDTHS.map((width, i) => (
-              <span key={i} className={styles.chip} style={{ width }} />
-            ))}
-          </div>
-          <div className={styles.marqueeGroup} aria-hidden="true">
-            {PARTNER_WIDTHS.map((width, i) => (
-              <span key={i} className={styles.chip} style={{ width }} />
-            ))}
+        <div className={styles.marqueeMask}>
+          <div className={styles.marqueeTrack}>
+            <div className={styles.marqueeGroup}>
+              {PARTNER_WIDTHS.map((width, i) => (
+                <span key={i} className={styles.chip} style={{ width }} />
+              ))}
+            </div>
+            <div className={styles.marqueeGroup} aria-hidden="true">
+              {PARTNER_WIDTHS.map((width, i) => (
+                <span key={i} className={styles.chip} style={{ width }} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -6,10 +6,8 @@ export default function AuroraBackground({
   variant?: "default" | "deep";
 }) {
   return (
-    <div
-      className={`${styles.aurora} ${variant === "deep" ? styles.deep : ""}`}
-      aria-hidden="true"
-    >
+    <div className={styles.aurora} aria-hidden="true">
+      <div className={`${styles.vignette} ${variant === "deep" ? styles.deep : ""}`} />
       <div className={styles.noise} />
     </div>
   );
