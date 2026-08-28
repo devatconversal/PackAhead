@@ -26,7 +26,7 @@
   gap: 18px;
   padding: 34px;
   border-radius: 18px;
-  background: #fff;
+  background: var(--blue);
   min-height: 300px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
@@ -36,68 +36,23 @@
   box-shadow: 0 24px 48px -24px rgba(11, 18, 32, 0.25);
 }
 
-.cardBlue {
-  background: var(--blue);
-}
-
-.cardMint {
-  background: var(--mint);
-}
-
-.cardDark {
-  background: var(--ink);
-}
-
 .number {
   font-family: var(--font-mono), monospace;
   font-size: 13px;
-  color: var(--blue);
-}
-
-.cardBlue .number {
   color: rgba(255, 255, 255, 0.8);
-}
-
-.cardMint .number {
-  color: rgba(5, 32, 24, 0.6);
-}
-
-.cardDark .number {
-  color: var(--mint);
 }
 
 .cardTitle {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.cardBlue .cardTitle,
-.cardDark .cardTitle {
   color: #fff;
-}
-
-.cardMint .cardTitle {
-  color: #052018;
 }
 
 .cardText {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--ink-soft);
-}
-
-.cardBlue .cardText {
   color: rgba(255, 255, 255, 0.84);
-}
-
-.cardMint .cardText {
-  color: rgba(5, 32, 24, 0.72);
-}
-
-.cardDark .cardText {
-  color: rgba(255, 255, 255, 0.76);
 }
 
 @media (max-width: 900px) {

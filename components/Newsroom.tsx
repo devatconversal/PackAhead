@@ -61,7 +61,12 @@ export default function Newsroom() {
                   <span className={styles.title}>{item.title}</span>
                   <span className={styles.date}>{item.date}</span>
                 </div>
-                <span className={styles.arrow}>→</span>
+                <span className={styles.arrow}>
+                  <span className={styles.arrowTrack}>
+                    <span className={styles.arrowIcon}>→</span>
+                    <span className={styles.arrowIcon}>→</span>
+                  </span>
+                </span>
               </a>
             </Reveal>
           ))}

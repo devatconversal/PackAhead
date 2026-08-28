@@ -85,12 +85,34 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   border-radius: 999px;
   border: 1px solid #c9d3e1;
   color: var(--ink);
   font-size: 16px;
+}
+
+.arrowTrack {
+  display: flex;
+  width: 88px;
+  transform: translateX(-44px);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrowIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row:hover .arrowTrack {
+  transform: translateX(0);
 }
 
 @media (max-width: 720px) {

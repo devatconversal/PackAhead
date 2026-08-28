@@ -1,4 +1,3 @@
-import FramedPanel from "./FramedPanel";
 import Reveal from "./Reveal";
 import styles from "./Numbers.module.css";
 
@@ -12,8 +11,8 @@ const STATS = [
 export default function Numbers() {
   return (
     <section className={styles.section}>
-      <FramedPanel flushTop>
-        <div className={styles.content}>
+      <div className="container">
+        <div className={styles.panel}>
           <Reveal>
             <h2 className={styles.heading}>An innovation action, built on collaboration</h2>
           </Reveal>
@@ -28,7 +27,7 @@ export default function Numbers() {
             ))}
           </div>
         </div>
-      </FramedPanel>
+      </div>
     </section>
   );
 }

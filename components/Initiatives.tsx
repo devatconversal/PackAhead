@@ -10,14 +10,15 @@ export default function Initiatives() {
         <div className={styles.grid}>
           {ITEMS.map((n, i) => (
             <Reveal key={n} delay={i * 90}>
-              <div className={styles.card}>
+              <a href="#" className={styles.card}>
                 <span className={styles.badge} style={{ width: 84 + i * 16 }} />
                 <h3 className={styles.title}>Connected initiative</h3>
                 <p className={styles.text}>
                   One line on how this project relates to PackAhead, with a link to
                   its website.
                 </p>
-              </div>
+                <span className={styles.arrow}>→</span>
+              </a>
             </Reveal>
           ))}
         </div>
