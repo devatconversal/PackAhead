@@ -1,0 +1,146 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #170769;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 72px;
+  padding-bottom: 40px;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.heading {
+  max-width: 640px;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding: 56px 0 64px;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tagline {
+  max-width: 330px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.colTitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.colLink {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.colLink:hover {
+  color: #fff;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.funding {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.euBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 62px;
+  height: 42px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.16);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fundingText {
+  max-width: 620px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.legal a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.legal a:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .heading {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 560px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
