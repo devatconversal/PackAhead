@@ -1,6 +1,9 @@
+.section {
+  width: 100%;
+  background: var(--surface);
+}
+
 .about {
-  position: relative;
-  z-index: 1;
   padding-top: 120px;
   padding-bottom: 0;
 }
@@ -17,7 +20,7 @@
   font-size: 54px;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--ink);
 }
 
 .copy {
@@ -31,7 +34,7 @@
 .text {
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
 }
 
 .images {
@@ -46,7 +49,7 @@
   height: 420px;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--line);
 }
 
 .image {

@@ -1,5 +1,5 @@
 import V2Hero from "@/components/v2/V2Hero";
-import V2About from "@/components/v2/V2About";
+import About from "@/components/About";
 import Statement from "@/components/Statement";
 import Pillars from "@/components/Pillars";
 import Numbers from "@/components/Numbers";
@@ -13,7 +13,7 @@ export default function HomeV2() {
   return (
     <main>
       <V2Hero />
-      <V2About />
+      <About />
       <Statement />
       <Pillars />
       <Numbers />

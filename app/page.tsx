@@ -15,8 +15,8 @@ export default function Home() {
     <main>
       <HeroFrame>
         <Hero />
-        <About />
       </HeroFrame>
+      <About />
       <Statement />
       <Pillars />
       <Numbers />
