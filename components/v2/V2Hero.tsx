@@ -7,7 +7,7 @@ const PARTNER_WIDTHS = [128, 96, 146, 110, 132, 88, 120, 104];
 
 export default function V2Hero() {
   return (
-    <section id="top" className={styles.section}>
+    <>
       <AuroraBackground />
       <div className={`container ${styles.inner}`}>
         <SiteNav />
@@ -38,6 +38,6 @@ export default function V2Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
