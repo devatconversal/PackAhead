@@ -26,7 +26,7 @@
   gap: 18px;
   padding: 34px;
   border-radius: 18px;
-  background: var(--blue);
+  background: var(--tint-blue);
   min-height: 300px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
@@ -39,20 +39,20 @@
 .number {
   font-family: var(--font-mono), monospace;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--blue);
 }
 
 .cardTitle {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--ink);
 }
 
 .cardText {
   font-size: 16px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--ink-soft);
 }
 
 @media (max-width: 900px) {
