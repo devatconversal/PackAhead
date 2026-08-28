@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FramedPanel from "./FramedPanel";
+import SwapButton from "./SwapButton";
 import styles from "./SiteFooter.module.css";
 
 const PROJECT_LINKS = [
@@ -22,14 +23,7 @@ export default function SiteFooter() {
       <FramedPanel id="contact" variant="deep">
         <div className={styles.top}>
           <h2 className={styles.heading}>Stay close to the project</h2>
-          <div className={styles.actions}>
-            <a href="#contact" className={styles.subscribe}>
-              SUBSCRIBE TO THE NEWSLETTER
-            </a>
-            <a href="#contact" className={styles.arrowBtn} aria-label="Subscribe to the newsletter">
-              →
-            </a>
-          </div>
+          <SwapButton href="#contact" label="SUBSCRIBE TO THE NEWSLETTER" variant="dark" />
         </div>
 
         <div className={styles.columns}>

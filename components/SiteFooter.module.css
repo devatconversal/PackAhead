@@ -22,50 +22,6 @@
   color: #fff;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.subscribe {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  height: 52px;
-  padding: 0 24px;
-  border-radius: 12px;
-  background: var(--blue);
-  color: #fff;
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  transition: background 0.25s ease;
-}
-
-.subscribe:hover {
-  background: var(--blue-hover);
-  color: #fff;
-}
-
-.arrowBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-  width: 52px;
-  border-radius: 12px;
-  background: var(--mint);
-  color: #052018;
-  font-size: 19px;
-  transition: background 0.25s ease;
-}
-
-.arrowBtn:hover {
-  background: var(--mint-hover);
-}
-
 .columns {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;

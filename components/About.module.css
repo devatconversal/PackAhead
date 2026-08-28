@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   padding-top: 120px;
-  padding-bottom: 140px;
+  padding-bottom: 0;
 }
 
 .top {
