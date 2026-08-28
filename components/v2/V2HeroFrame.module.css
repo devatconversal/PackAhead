@@ -5,7 +5,7 @@
   min-height: 100vh;
   min-height: 100svh;
   box-sizing: border-box;
-  background: var(--surface-page);
+  background: var(--surface);
   padding: 14px;
 }
 
