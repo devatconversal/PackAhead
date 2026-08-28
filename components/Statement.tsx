@@ -42,7 +42,10 @@ export default function Statement() {
       }
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight || 1;
-      const p = (vh - rect.top) / (vh + rect.height);
+      // Reaches 1 once the text's top hits the top of the viewport, so the
+      // sweep to full blue finishes while the text is still fully on
+      // screen, well before it scrolls out of view.
+      const p = (vh - rect.top) / vh;
       setProgress(Math.min(1, Math.max(0, p)));
       ticking = false;
     };
