@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AuroraBackground from "../AuroraBackground";
 import SwapButton from "../SwapButton";
+import EuEmblem from "../EuEmblem";
 import styles from "./V2Footer.module.css";
 
 const PROJECT_LINKS = [
@@ -42,10 +43,13 @@ export default function V2Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.funding}>
-            <span className={styles.euBadge}>EU flag</span>
+            <EuEmblem />
             <p className={styles.fundingText}>
-              Funded by the European Union under grant agreement No 000000. Views and
-              opinions expressed are those of the authors only.
+              Funded by the European Union. Views and opinions expressed are however
+              those of the author(s) only and do not necessarily reflect those of the
+              European Union or the European Research Executive Agency. Neither the
+              European Union nor the granting authority can be held responsible for
+              them. Grant Agreement No. 101287475
             </p>
           </div>
           <div className={styles.legal}>

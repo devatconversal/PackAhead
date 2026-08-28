@@ -80,20 +80,6 @@
   gap: 18px;
 }
 
-.euBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 62px;
-  height: 42px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.16);
-  font-family: var(--font-mono), monospace;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .fundingText {
   max-width: 620px;
   font-size: 13px;
