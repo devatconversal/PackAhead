@@ -1,12 +1,12 @@
-import SwapButton from "./SwapButton";
 import SiteNav from "./SiteNav";
+import SwapButton from "./SwapButton";
 import styles from "./Hero.module.css";
 
 const PARTNER_WIDTHS = [128, 96, 146, 110, 132, 88, 120, 104];
 
 export default function Hero() {
   return (
-    <div className={`container ${styles.hero}`}>
+    <div className={`container ${styles.inner}`}>
       <SiteNav />
 
       <div>

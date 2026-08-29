@@ -6,7 +6,8 @@ import styles from "./HeroFrame.module.css";
  * section. Its background is attached to the viewport (background-
  * attachment: fixed), so the card acts like a window onto a backdrop
  * that doesn't move: as the card scrolls up and off, the scenery
- * showing through it stays put.
+ * showing through it stays put. Unlike position:fixed, this is
+ * naturally clipped to the card's own rounded shape as it scrolls.
  */
 export default function HeroFrame({ children }: { children: React.ReactNode }) {
   return (

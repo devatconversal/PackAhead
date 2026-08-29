@@ -1,12 +1,11 @@
-.hero {
+.inner {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding-top: 40px;
-  padding-bottom: 64px;
+  padding: 40px 0 44px;
 }
 
 .heading {
@@ -80,7 +79,7 @@
 }
 
 @media (max-width: 720px) {
-  .hero {
+  .inner {
     padding-top: 24px;
   }
 }
