@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./ParallaxAurora.module.css";
 
-const RANGE = 40; // px, total drift from the panel entering to leaving view
+const RANGE = 90; // px, total drift from the panel entering to leaving view
 
 /**
  * Like AuroraBackground, but the image drifts a little as the panel
