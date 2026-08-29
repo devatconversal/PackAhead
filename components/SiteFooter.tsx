@@ -21,7 +21,7 @@ const FOLLOW_LINKS = [{ label: "LinkedIn", href: "#contact" }];
 export default function SiteFooter() {
   return (
     <section className={styles.section}>
-      <FramedPanel id="contact">
+      <FramedPanel id="contact" parallax>
         <div className={styles.top}>
           <h2 className={styles.heading}>Stay close to the project</h2>
           <SwapButton href="#contact" label="SUBSCRIBE TO THE NEWSLETTER" variant="dark" />

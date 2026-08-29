@@ -1,4 +1,5 @@
 import AuroraBackground from "./AuroraBackground";
+import ParallaxAurora from "./ParallaxAurora";
 import styles from "./FramedPanel.module.css";
 
 /**
@@ -11,15 +12,17 @@ export default function FramedPanel({
   children,
   id,
   flushTop = false,
+  parallax = false,
 }: {
   children: React.ReactNode;
   id?: string;
   flushTop?: boolean;
+  parallax?: boolean;
 }) {
   return (
     <div className={styles.outer} style={flushTop ? { paddingTop: 0 } : undefined}>
       <div id={id} className={styles.panel}>
-        <AuroraBackground />
+        {parallax ? <ParallaxAurora /> : <AuroraBackground />}
         <div className={`container ${styles.inner}`}>{children}</div>
       </div>
     </div>

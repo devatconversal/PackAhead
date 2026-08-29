@@ -1,0 +1,12 @@
+.aurora {
+  position: absolute;
+  top: -80px;
+  bottom: -80px;
+  left: 0;
+  right: 0;
+  background-color: #170769;
+  background-image: url("/background/aurora.svg");
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
