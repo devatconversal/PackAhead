@@ -51,7 +51,22 @@ export default function MediaCorner() {
               <a href="#media" className={styles.row}>
                 <div className={styles.thumb} aria-hidden="true">
                   <span className={styles.thumbCategory}>{doc.category}</span>
-                  <span className={styles.thumbFormat}>{doc.format}</span>
+                  <span className={styles.thumbFormat}>
+                    {doc.format}
+                    <svg
+                      className={styles.downloadIcon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 4v11" />
+                      <path d="m7 10 5 5 5-5" />
+                      <path d="M5 20h14" />
+                    </svg>
+                  </span>
                 </div>
                 <div className={styles.meta}>
                   <span className={styles.title}>{doc.title}</span>
