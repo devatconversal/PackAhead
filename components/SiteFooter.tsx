@@ -5,13 +5,13 @@ import EuEmblem from "./EuEmblem";
 import styles from "./SiteFooter.module.css";
 
 const PROJECT_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Partners", href: "#partners" },
-  { label: "Connected initiatives", href: "#initiatives" },
+  { label: "About", href: "/about" },
+  { label: "Partners", href: "/#partners" },
+  { label: "Connected initiatives", href: "/#initiatives" },
 ];
 
 const RESOURCE_LINKS = [
-  { label: "Media corner", href: "#media" },
+  { label: "Media corner", href: "/#media" },
   { label: "Contact", href: "#contact" },
 ];
 

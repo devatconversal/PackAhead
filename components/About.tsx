@@ -17,7 +17,7 @@ export default function About() {
                 The project runs for four years and brings research institutions and
                 companies together across Europe, with a link to South Korea.
               </p>
-              <SwapButton href="#about" label="READ ABOUT THE PROJECT" variant="light" />
+              <SwapButton href="/about" label="READ ABOUT THE PROJECT" variant="light" />
             </div>
           </div>
         </Reveal>
