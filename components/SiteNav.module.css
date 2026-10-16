@@ -85,3 +85,74 @@
 .light .active {
   background: rgba(11, 18, 32, 0.08);
 }
+
+.dropdown {
+  position: relative;
+}
+
+.caret {
+  margin-left: 8px;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .caret,
+.dropdown:focus-within .caret {
+  transform: rotate(180deg);
+}
+
+/* The menu hangs below its trigger; padding-top bridges the gap so the
+   pointer can travel from ABOUT into the menu without it closing. */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  padding-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.dropdown:hover .menu,
+.dropdown:focus-within .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 18px;
+  background: #fff;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background 0.18s ease;
+}
+
+.menuLink:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.menuLink:last-child {
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.menuLink:hover {
+  background: var(--tint-blue);
+  color: var(--ink);
+}
+
+.menu {
+  filter: drop-shadow(0 18px 30px rgba(11, 18, 32, 0.18));
+}

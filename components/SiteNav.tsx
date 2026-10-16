@@ -2,8 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./SiteNav.module.css";
 
+const ABOUT_VERSIONS = [
+  { href: "/about/v1", label: "About V1" },
+  { href: "/about", label: "About V2" },
+];
+
 const LINKS = [
-  { href: "/about", label: "ABOUT" },
   { href: "/#partners", label: "PARTNERS" },
   { href: "/#initiatives", label: "CONNECTED INITIATIVES" },
   { href: "/#media", label: "MEDIA CORNER" },
@@ -32,6 +36,26 @@ export default function SiteNav({
         />
       </Link>
       <nav className={styles.pill} aria-label="Primary">
+        <div className={styles.dropdown}>
+          <Link
+            href="/about"
+            className={`${styles.link} ${active === "/about" ? styles.active : ""}`}
+            aria-current={active === "/about" ? "page" : undefined}
+            aria-haspopup="true"
+          >
+            ABOUT
+            <span className={styles.caret} aria-hidden="true">
+              ▾
+            </span>
+          </Link>
+          <div className={styles.menu}>
+            {ABOUT_VERSIONS.map((version) => (
+              <Link key={version.href} href={version.href} className={styles.menuLink}>
+                {version.label}
+              </Link>
+            ))}
+          </div>
+        </div>
         {LINKS.map((link) => (
           <Link
             key={link.href}

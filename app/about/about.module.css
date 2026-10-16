@@ -15,7 +15,7 @@
 }
 
 .title {
-  margin-top: 120px;
+  margin-top: 168px;
   font-weight: 700;
   font-size: 123px;
   line-height: 1.02;
@@ -42,6 +42,99 @@
   line-height: 1.2;
   letter-spacing: -0.025em;
   color: #fff;
+}
+
+/* About V1 header: the homepage hero frame — fills the viewport, fixed aurora
+   window, same 14px outer margin and 40px inner margin — but with its content
+   in normal flow so the taller V1 header can grow instead of being clipped. */
+
+.heroOuter {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 14px;
+  background: var(--surface);
+}
+
+.heroFrame {
+  display: flex;
+  flex: 1;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: var(--dark-base);
+  background-image: url("/background/aurora.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: calc(var(--max-width) + 80px);
+  padding: 40px 40px 44px;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heroTitle {
+  max-width: 900px;
+  font-weight: 400;
+  font-size: 82px;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.heroText {
+  max-width: 620px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heroFacts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.heroFact {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.heroFactValue {
+  margin: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.heroFactLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Sections */
@@ -404,6 +497,12 @@
 }
 
 @media (max-width: 900px) {
+  .heroTitle {
+    font-size: 52px;
+  }
+  .heroFacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .title {
     font-size: 72px;
   }
@@ -434,8 +533,11 @@
   .headerInner {
     padding: 24px;
   }
+  .heroInner {
+    padding: 24px;
+  }
   .title {
-    margin-top: 72px;
+    margin-top: 104px;
     font-size: 52px;
   }
   .rule {
@@ -474,5 +576,8 @@
 @media (max-width: 560px) {
   .intro {
     font-size: 24px;
+  }
+  .heroTitle {
+    font-size: 40px;
   }
 }
