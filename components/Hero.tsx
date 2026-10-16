@@ -10,11 +10,11 @@ export default function Hero() {
       <SiteNav />
 
       <div>
-        <h1 className={styles.heading}>Advancing circular cellophane packaging.</h1>
+        <h1 className={styles.heading}>Advancing circular cellulose film packaging.</h1>
         <div className={styles.subRow}>
           <p className={styles.sub}>
             AI-driven enzyme design and cellulose films for recyclable food packaging,
-            developed by 18 European partners.
+            developed by 18 partners.
           </p>
           <SwapButton href="#about" label="DISCOVER THE PROJECT" variant="dark" />
         </div>

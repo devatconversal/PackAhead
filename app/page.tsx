@@ -5,7 +5,7 @@ import Statement from "@/components/Statement";
 import Pillars from "@/components/Pillars";
 import Numbers from "@/components/Numbers";
 import Deliverables from "@/components/Deliverables";
-import Newsroom from "@/components/Newsroom";
+import MediaCorner from "@/components/MediaCorner";
 import Partners from "@/components/Partners";
 import Initiatives from "@/components/Initiatives";
 import SiteFooter from "@/components/SiteFooter";
@@ -21,9 +21,9 @@ export default function Home() {
       <Pillars />
       <Numbers />
       <Deliverables />
-      <Newsroom />
       <Partners />
       <Initiatives />
+      <MediaCorner />
       <SiteFooter />
     </main>
   );

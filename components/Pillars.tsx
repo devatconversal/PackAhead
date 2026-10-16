@@ -9,7 +9,7 @@ const PILLARS = [
   },
   {
     n: "02",
-    title: "Recycling",
+    title: "End-of-life",
     text: "Opening up recycling pathways for the films, supported by an optical identification system that sorts packaging automatically at end of life.",
   },
   {

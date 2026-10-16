@@ -12,7 +12,6 @@ const PROJECT_LINKS = [
 
 const RESOURCE_LINKS = [
   { label: "Media corner", href: "#media" },
-  { label: "Newsroom", href: "#media" },
   { label: "Contact", href: "#contact" },
 ];
 

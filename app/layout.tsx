@@ -4,7 +4,7 @@ import { inter, plexSans, plexMono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PackAhead — Advancing circular cellophane packaging with AI",
+  title: "PackAhead — Advancing circular cellulose film packaging with AI",
   description:
     "PackAhead uses artificial intelligence to speed up biological innovation and turn cellulose into a new generation of sustainable packaging films. A four year European research project.",
 };

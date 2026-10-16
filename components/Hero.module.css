@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding: 40px 0 44px;
+  padding: 40px;
 }
 
 .heading {
@@ -80,7 +80,7 @@
 
 @media (max-width: 720px) {
   .inner {
-    padding-top: 24px;
+    padding: 24px;
   }
 }
 
