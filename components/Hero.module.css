@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  max-width: none;
+  max-width: calc(var(--max-width) + 80px);
   padding: 40px;
 }
 
