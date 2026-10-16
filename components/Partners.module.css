@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  background: var(--surface);
+  background: var(--surface-alt);
   padding: 120px 0;
 }
 

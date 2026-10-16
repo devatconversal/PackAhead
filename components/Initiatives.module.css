@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  background: var(--surface);
+  background: var(--surface-alt);
   padding: 0 0 120px;
 }
 
@@ -17,6 +17,7 @@
   padding: 30px;
   border-radius: 18px;
   border: 1px solid var(--line);
+  background: var(--surface);
   color: inherit;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
