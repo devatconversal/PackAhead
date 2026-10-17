@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
-import AboutSections from "./AboutSections";
+import AboutSectionsV2 from "./AboutSectionsV2";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <AboutSections />
+      <AboutSectionsV2 />
       <SiteFooter />
     </main>
   );
