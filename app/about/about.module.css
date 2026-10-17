@@ -523,7 +523,8 @@
 }
 
 .sectionWhy {
-  padding-top: 0;
+  background: #f2f3f7;
+  padding: 110px 0;
 }
 
 .why {
@@ -531,9 +532,6 @@
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 48px;
   align-items: start;
-  padding: 56px;
-  border-radius: 32px;
-  background: #f2f3f7;
 }
 
 .whyCopy {
@@ -575,10 +573,6 @@
   color: var(--blue);
 }
 
-.sectionConsortium {
-  padding-top: 10px;
-}
-
 .timelineTitle {
   max-width: 760px;
 }
@@ -602,7 +596,6 @@
   .why {
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
-    padding: 32px;
   }
   .whyRow {
     grid-template-columns: minmax(0, 1fr);
@@ -644,9 +637,6 @@
 }
 
 @media (max-width: 720px) {
-  .why {
-    padding: 20px;
-  }
   .whyCard {
     padding: 4px 24px;
     border-radius: 28px;

@@ -8,7 +8,7 @@ import styles from "./about.module.css";
 /**
  * Everything below the header of About V2 (/about), following the
  * "About – light header v3" design: a mint end-of-life step, rounder AI
- * cards, unnumbered blue goal titles and "Why it matters" as a panel.
+ * cards, unnumbered blue goal titles and "Why it matters" as a grey band.
  */
 export default function AboutSectionsV2() {
   return (
@@ -124,7 +124,7 @@ export default function AboutSectionsV2() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.sectionConsortium}`}>
+      <section className={styles.section}>
         <div className={`container ${styles.two}`}>
           <Reveal>
             <div className={styles.consortiumCopy}>
