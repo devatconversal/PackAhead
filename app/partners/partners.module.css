@@ -1,0 +1,356 @@
+/* ---------- Coordinator ---------- */
+
+.coord {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 22px;
+  background: var(--tint-blue);
+}
+
+.coordVisual {
+  height: 240px;
+  background: #fff;
+  font-size: 34px;
+  color: var(--ink);
+}
+
+.coordCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 12px 20px 12px 0;
+}
+
+.coordText {
+  max-width: 640px;
+}
+
+/* ---------- Partner grid ---------- */
+
+.allPartners {
+  padding-bottom: 120px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid li {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--surface-alt);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ---------- Map ---------- */
+
+.where {
+  background: var(--surface-alt);
+}
+
+.whereText {
+  max-width: 520px;
+}
+
+.mapGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.listWrap {
+  position: relative;
+  min-height: 420px;
+}
+
+.listWrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 24px;
+  bottom: 0;
+  height: 56px;
+  background: linear-gradient(rgba(241, 243, 247, 0), var(--surface-alt));
+  pointer-events: none;
+}
+
+.list {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0 16px 40px 0;
+  list-style: none;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) var(--line);
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: var(--line);
+  border-radius: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 8px;
+}
+
+.pcard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 22px 24px;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pcard:hover {
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.pcardOn,
+.pcardOn:hover {
+  background: var(--blue-hover);
+  color: #fff;
+  box-shadow: none;
+}
+
+.pcName {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.pcRole {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.pcardOn .pcRole {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pcMeta {
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.pcardOn .pcMeta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mapCard {
+  position: relative;
+  padding: 28px;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.mapBox {
+  position: relative;
+}
+
+.mapImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pinWrap {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.pin {
+  position: absolute;
+  left: -14px;
+  top: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.pinDot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 3px #fff;
+  transition: transform 0.2s ease;
+}
+
+.pin:hover .pinDot {
+  transform: scale(1.25);
+}
+
+.pinOn .pinDot {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 5px var(--blue), 0 0 0 8px #fff;
+}
+
+.pinTip {
+  position: absolute;
+  left: 18px;
+  bottom: 12px;
+  z-index: 2;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(11, 18, 32, 0.16);
+  pointer-events: none;
+}
+
+.pinTipLeft {
+  left: auto;
+  right: 18px;
+}
+
+.inset {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.insetOn {
+  border-color: var(--blue-hover);
+  box-shadow: 0 0 0 1px var(--blue-hover);
+}
+
+.insetLabel {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .mapGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .listWrap {
+    order: 2;
+    min-height: 0;
+    height: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .coord {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .coordCopy {
+    padding: 0 8px 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .coord {
+    border-radius: 18px;
+    padding: 12px;
+  }
+  .coordVisual {
+    height: 180px;
+  }
+  .allPartners {
+    padding-bottom: 72px;
+  }
+  .mapCard {
+    padding: 16px;
+  }
+  .inset {
+    position: static;
+    width: auto;
+    margin-top: 16px;
+  }
+  .pinTip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

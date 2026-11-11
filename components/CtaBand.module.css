@@ -1,0 +1,44 @@
+.section {
+  padding-bottom: 120px;
+}
+
+.band {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 48px;
+  border-radius: 22px;
+  background: var(--tint-blue);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 520px;
+}
+
+.text {
+  max-width: 640px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-bottom: 72px;
+  }
+  .band {
+    gap: 28px;
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+  .copy {
+    flex-basis: 100%;
+  }
+  .text {
+    font-size: 18px;
+  }
+}

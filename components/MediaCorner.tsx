@@ -42,13 +42,13 @@ export default function MediaCorner() {
                 deliverables and visual material, free to download.
               </p>
             </div>
-            <SwapButton href="#media" label="VIEW ALL DOCUMENTS" variant="light" />
+            <SwapButton href="/media-corner" label="VIEW ALL DOCUMENTS" variant="light" />
           </div>
         </Reveal>
         <div className={styles.list}>
           {DOCUMENTS.map((doc, i) => (
             <Reveal key={doc.title} delay={i * 60}>
-              <a href="#media" className={styles.row}>
+              <a href="/media-corner" className={styles.row}>
                 <div className={styles.thumb} aria-hidden="true">
                   <span className={styles.thumbCategory}>{doc.category}</span>
                   <span className={styles.thumbFormat}>

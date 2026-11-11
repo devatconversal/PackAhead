@@ -14,3 +14,12 @@
   position: relative;
   z-index: 1;
 }
+
+@media (max-width: 720px) {
+  .outer {
+    padding: 8px;
+  }
+  .panel {
+    border-radius: 18px;
+  }
+}

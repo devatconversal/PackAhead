@@ -20,7 +20,7 @@ export default function Partners() {
                 Partnership Food Packaging, a European network of cluster
                 organisations.
               </p>
-              <SwapButton href="#partners" label="SEE ALL PARTNERS" variant="light" />
+              <SwapButton href="/partners" label="SEE ALL PARTNERS" variant="light" />
             </div>
           </div>
         </Reveal>

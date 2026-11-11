@@ -16,7 +16,7 @@ export default function Hero() {
             AI-driven enzyme design and cellulose films for recyclable food packaging,
             developed by 18 partners.
           </p>
-          <SwapButton href="#about" label="DISCOVER THE PROJECT" variant="dark" />
+          <SwapButton href="/about" label="DISCOVER THE PROJECT" variant="dark" />
         </div>
 
         <div className={styles.marqueeMask}>

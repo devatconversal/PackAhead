@@ -1,694 +1,123 @@
-/* Header: no background, same outer frame spacing as the homepage hero */
-
-.header {
-  padding: 14px;
-  background: #f2f3f7c7;
-}
-
-.headerInner {
+.investigates {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: calc(var(--max-width) + 80px);
-  margin: 0 auto;
-  padding: 40px 40px 44px;
+  gap: 72px;
 }
-
-.title {
-  margin-top: 168px;
-  font-weight: 500;
-  font-size: 123px;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-}
-
-.titleAccent {
-  color: var(--blue);
-}
-
-.rule {
-  width: 100%;
-  margin: 72px 0 40px;
-  border: 0;
-  border-top: 1px solid var(--line-soft);
-}
-
-.intro {
-  padding: 56px 64px;
-  border-radius: 22px;
-  background: var(--blue);
-  font-size: 44px;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  color: #fff;
-}
-
-/* About V1 header: the homepage hero frame — fills the viewport, fixed aurora
-   window, same 14px outer margin and 40px inner margin — but with its content
-   in normal flow so the taller V1 header can grow instead of being clipped. */
-
-.heroOuter {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 14px;
-  background: var(--surface);
-}
-
-.heroFrame {
-  display: flex;
-  flex: 1;
-  border-radius: 22px;
-  overflow: hidden;
-  background-color: var(--dark-base);
-  background-image: url("/background/aurora.svg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.heroInner {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  max-width: calc(var(--max-width) + 80px);
-  padding: 40px 40px 44px;
-}
-
-.heroCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin-top: auto;
-}
-
-.heroTitle {
-  max-width: 900px;
-  font-weight: 400;
-  font-size: 82px;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: #fff;
-}
-
-.heroText {
-  max-width: 620px;
-  font-size: 20px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.heroFacts {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  margin: 0;
-  padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.heroFact {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  gap: 6px;
-}
-
-.heroFactValue {
-  margin: 0;
-  font-family: var(--font-sans), sans-serif;
-  font-size: 34px;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-
-.heroFactLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.copy {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Sections */
-
-.section {
-  width: 100%;
-  background: var(--surface);
-  padding: 120px 0 110px;
-}
-
-.sectionAlt {
-  background: var(--surface-alt);
-  padding: 110px 0;
-}
-
-.sectionFlushTop {
-  padding: 0 0 120px;
-}
-
-.heading {
-  font-weight: 400;
-  font-size: 54px;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-}
-
-.headingWide {
-  max-width: 814px;
-}
-
-.headingNarrow {
-  max-width: 424px;
-}
-
-.headingLight {
-  color: #fff;
-}
-
-.two {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 80px;
-  align-items: start;
-}
-
-.text {
-  max-width: 560px;
-  padding-top: 10px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-}
-
-.textLight {
-  padding-top: 10px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.number {
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  color: var(--blue);
-}
-
-/* What PackAhead investigates */
 
 .steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 72px;
+}
+
+.stepWrap {
+  display: flex;
 }
 
 .step {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  height: 100%;
+  flex: 1;
   min-height: 200px;
-  padding: 26px;
-  border-radius: 18px;
-  background: var(--tint-blue);
 }
 
-.stepTitle {
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+.stepLast {
+  background: var(--mint);
 }
 
-.stepText {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-}
-
-.stepAccent {
-  background: var(--blue);
-}
-
-.stepAccent .number {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.stepAccent .stepTitle {
-  color: #fff;
-}
-
-.stepAccent .stepText {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* AI runs through the whole project */
-
-.ai {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding: 110px 0;
-}
-
-.tools {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.tool {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  height: 100%;
-  min-height: 220px;
-  padding: 26px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.toolNumber {
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  color: var(--mint);
-}
-
-.toolTitle {
-  font-size: 19px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.toolText {
-  font-size: 15px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.trust {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding: 26px 30px;
-  border-radius: 18px;
-  border: 1px solid rgba(55, 229, 255, 0.4);
-}
-
-.trustLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
+.stepNumber {
+  font-weight: 500;
+  font-size: 12px;
   letter-spacing: 0.06em;
-  color: var(--cyan);
 }
-
-.trustText {
-  flex: 1 1 420px;
-  font-size: 16px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.86);
-}
-
-/* What the project wants to achieve */
 
 .goals {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  margin-top: 64px;
+  gap: 16px;
 }
 
 .goal {
-  display: flex;
-  flex-direction: column;
   gap: 18px;
   height: 100%;
-  min-height: 300px;
+  min-height: 254px;
   padding: 34px;
-  border-radius: 18px;
-  background: var(--tint-blue);
 }
 
-.goalTitle {
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.goalText {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-}
-
-/* Why it matters */
-
-.audiences {
-  margin-top: 56px;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.audience {
-  display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 40px;
-  align-items: baseline;
-  padding: 30px 0;
-  border-top: 1px solid var(--line-soft);
-}
-
-.audienceTitle {
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.audienceText {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-}
-
-/* Consortium */
-
-.consortiumCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.consortiumCopy .text {
-  padding-top: 0;
-}
-
-.facts {
-  margin: 0;
+.consortium {
   padding-top: 10px;
-  border-bottom: 1px solid var(--line-soft);
 }
 
-.fact {
-  display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 24px;
-  padding: 22px 0;
-  border-top: 1px solid var(--line-soft);
+.consRows {
+  padding-top: 10px;
 }
 
-.factLabel {
-  padding-top: 4px;
-  font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
+.timeline {
+  padding-bottom: 120px;
 }
 
-.factValue {
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--ink);
-}
-
-/* Timeline */
-
-.timelineHead {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 760px;
-}
-
-.eyebrow {
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  color: var(--blue);
-}
-
-.milestones {
+.miles {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 56px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.milestone {
+.mile {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.date {
+.mileWhen {
   display: block;
   margin-bottom: 10px;
   padding-bottom: 14px;
   border-bottom: 2px solid var(--blue);
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  color: var(--blue);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
-.dateAmbition {
+.mileFuture {
   border-bottom-style: dashed;
   border-bottom-color: var(--mint);
   color: #0f8a5f;
 }
 
-.milestoneTitle {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.milestoneText {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-}
-
-/* About V2 sections (light header v3 design) */
-
-.stepMint {
-  background: var(--mint);
-}
-
-.stepMint .number,
-.stepMint .stepTitle,
-.stepMint .stepText {
-  color: var(--ink);
-}
-
-.textAi {
-  max-width: 556px;
-}
-
-.toolRound {
-  padding: 28px;
-  border-radius: 28px;
-}
-
-.toolNumberBright {
-  color: #00e195;
-}
-
-.trustRound {
-  border-radius: 28px;
-}
-
-.goalsTight {
-  gap: 16px;
-}
-
-.goalCompact {
-  min-height: 254px;
-}
-
-.goalTitleBlue {
-  color: var(--blue);
-}
-
-.sectionWhy {
-  background: #f2f3f7;
-  padding: 110px 0;
-}
-
-.why {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.whyCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.whyText {
-  max-width: 520px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #1757c9;
-}
-
-.whyCard {
-  padding: 8px 40px;
-  border-radius: 36px;
-  background: #fff;
-}
-
-.whyRow {
-  display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 32px;
-  align-items: baseline;
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
-}
-
-.whyRow:first-child {
-  border-top: 0;
-}
-
-.whyRowTitle {
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--blue);
-}
-
-.timelineTitle {
-  max-width: 760px;
-}
-
-/* Responsive */
-
 @media (max-width: 1100px) {
-  .title {
-    font-size: 96px;
-  }
-  .steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .tools,
-  .milestones {
+  .steps,
+  .miles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 900px) {
-  .why {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
-  }
-  .whyRow {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-  .goalCompact {
-    min-height: 0;
-  }
-  .heroTitle {
-    font-size: 52px;
-  }
-  .heroFacts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .title {
-    font-size: 72px;
-  }
-  .intro {
-    padding: 32px 28px;
-    font-size: 30px;
-  }
-  .two {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
   .goals {
     grid-template-columns: minmax(0, 1fr);
   }
   .goal {
     min-height: 0;
   }
-  .audience {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-  .heading {
-    font-size: 40px;
-  }
 }
 
 @media (max-width: 720px) {
-  .whyCard {
-    padding: 4px 24px;
-    border-radius: 28px;
-  }
-  .headerInner {
-    padding: 24px;
-  }
-  .heroInner {
-    padding: 24px;
-  }
-  .title {
-    margin-top: 104px;
-    font-size: 52px;
-  }
-  .rule {
-    margin: 44px 0 28px;
-  }
-  .section {
-    padding: 72px 0;
-  }
-  .sectionFlushTop {
-    padding-top: 0;
-  }
-  .ai {
-    padding: 72px 0;
+  .investigates {
+    gap: 40px;
   }
   .steps,
-  .tools,
-  .milestones {
+  .miles {
     grid-template-columns: minmax(0, 1fr);
   }
-  .step,
-  .tool {
+  .step {
     min-height: 0;
   }
-  .fact {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 6px;
+  .goal {
+    padding: 26px;
   }
-  .heading {
-    font-size: 34px;
-  }
-  .br {
-    display: none;
-  }
-}
-
-@media (max-width: 560px) {
-  .intro {
-    font-size: 24px;
-  }
-  .heroTitle {
-    font-size: 40px;
+  .timeline {
+    padding-bottom: 72px;
   }
 }
