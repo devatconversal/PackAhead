@@ -109,7 +109,7 @@
 
 .arrow {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   flex-shrink: 0;
   width: 44px;
@@ -122,8 +122,10 @@
 
 .arrowTrack {
   display: flex;
-  width: 88px;
-  transform: translateX(-44px);
+  flex-direction: column;
+  width: 44px;
+  height: 88px;
+  transform: translateY(-44px);
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -137,7 +139,7 @@
 }
 
 .row:hover .arrowTrack {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .downloadIcon {

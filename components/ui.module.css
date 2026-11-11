@@ -135,6 +135,10 @@
   transform: translateX(3px);
 }
 
+.visit:hover .arrDown {
+  transform: translateY(3px);
+}
+
 .visitDark,
 .visitDark:hover {
   color: #fff;

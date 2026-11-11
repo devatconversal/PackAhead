@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     "PackAhead plugs into European networks, shared research infrastructure and sister projects that tackle the same challenge from other angles.",
 };
 
-const JUMPS = [
-  { value: "S3 Partnership", label: "Food packaging network", href: "#network" },
-  { value: "IBISBA", label: "Biotech infrastructure", href: "#infrastructure" },
-  { value: "Sister projects", label: "Same EU call", href: "#projects" },
-  { value: "Horizon Europe", label: "EU framework", href: "#framework" },
+const FACTS = [
+  { value: "S3 Partnership", label: "Food packaging network" },
+  { value: "IBISBA", label: "Biotech infrastructure" },
+  { value: "Sister projects", label: "Same EU call" },
+  { value: "Horizon Europe", label: "EU framework" },
 ];
 
 const FIVE_RS = ["REFUSE", "REDUCE", "REUSE", "RECYCLE", "RENEWABLE"];
@@ -88,7 +88,7 @@ export default function ConnectedInitiativesPage() {
           </>
         }
         intro="PackAhead does not work alone. It plugs into European networks, shared research infrastructure and sister projects that tackle the same challenge from other angles."
-        facts={JUMPS}
+        facts={FACTS}
       />
 
       {/* S3 Partnership */}
@@ -112,11 +112,12 @@ export default function ConnectedInitiativesPage() {
             <div className={styles.panel}>
               <div className={styles.panelCopy}>
                 <h3 className={ui.cardTitleLg}>
-                  Sustainable food packaging in a circular economy, built on five R&apos;s
+                  Sustainable food packaging in a circular economy, <br />
+                  built on five R&apos;s
                 </h3>
-                <ul className={styles.chips}>
+                <ul className={styles.rs} aria-label="The five R's">
                   {FIVE_RS.map((r) => (
-                    <li key={r} className={`${styles.chip} ${r === "RENEWABLE" ? styles.chipOn : ""}`}>
+                    <li key={r} className={r === "RENEWABLE" ? styles.rsOn : undefined}>
                       {r}
                     </li>
                   ))}

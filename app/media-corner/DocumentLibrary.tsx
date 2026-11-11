@@ -59,7 +59,13 @@ export default function DocumentLibrary() {
                 <div className={styles.docFoot}>
                   <span className={ui.label}>{d.meta}</span>
                   <a href={d.url} className={ui.visit} aria-label={`${d.action}: ${d.title}`}>
-                    {d.action} <span className={ui.arr} aria-hidden="true">→</span>
+                    {d.action}{" "}
+                    <span
+                      className={d.action === "Download" ? `${ui.arr} ${ui.arrDown}` : ui.arr}
+                      aria-hidden="true"
+                    >
+                      {d.action === "Download" ? "↓" : "→"}
+                    </span>
                   </a>
                 </div>
               </article>

@@ -80,15 +80,6 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
-  transition: color 0.2s ease;
-}
-
-.jump:hover {
-  color: #fff;
-}
-
-.jump:hover .factLabel {
-  color: var(--mint);
 }
 
 @media (max-width: 900px) {

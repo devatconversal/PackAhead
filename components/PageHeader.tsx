@@ -1,14 +1,13 @@
-import Link from "next/link";
 import AuroraBackground from "./AuroraBackground";
 import SiteNav from "./SiteNav";
 import styles from "./PageHeader.module.css";
 
-export type Fact = { value: string; label: string; href?: string };
+export type Fact = { value: string; label: string };
 
 /**
  * Header for the inner pages: the dark aurora card from the homepage,
  * holding the navigation, a large title, an intro line and optionally
- * a row of key facts (which can double as jump links).
+ * a row of key facts.
  */
 export default function PageHeader({
   title,
@@ -33,21 +32,12 @@ export default function PageHeader({
 
           {facts && (
             <div className={styles.facts}>
-              {facts.map((fact) =>
-                fact.href ? (
-                  <Link key={fact.value} href={fact.href} className={`${styles.fact} ${styles.jump}`}>
-                    <span className={styles.factValue}>{fact.value}</span>
-                    <span className={styles.factLabel}>
-                      {fact.label} <span aria-hidden="true">↓</span>
-                    </span>
-                  </Link>
-                ) : (
-                  <div key={fact.value} className={styles.fact}>
-                    <span className={styles.factValue}>{fact.value}</span>
-                    <span className={styles.factLabel}>{fact.label}</span>
-                  </div>
-                )
-              )}
+              {facts.map((fact) => (
+                <div key={fact.value} className={styles.fact}>
+                  <span className={styles.factValue}>{fact.value}</span>
+                  <span className={styles.factLabel}>{fact.label}</span>
+                </div>
+              ))}
             </div>
           )}
         </div>

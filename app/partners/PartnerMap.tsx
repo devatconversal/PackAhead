@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element -- the map layers are stacked SVGs that must line up pixel-perfect; next/image adds nothing here. */
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { COORDINATOR, KOREA_PIN, PARTNERS, PINS, type City, type Country, type Partner } from "./data";
 import styles from "./partners.module.css";
 
@@ -27,6 +27,25 @@ const OVERLAYS: Exclude<Country, "korea">[] = [
 export default function PartnerMap() {
   const [selectedId, setSelectedId] = useState(COORDINATOR.id);
   const current = ALL.find((p) => p.id === selectedId) ?? COORDINATOR;
+  const listRef = useRef<HTMLUListElement>(null);
+
+  // After picking a pin, bring the selected partner card into view inside
+  // the scrolling list (without scrolling the page itself).
+  const scrollListTo = (id: string) => {
+    requestAnimationFrame(() => {
+      const list = listRef.current;
+      const card = list?.querySelector<HTMLElement>(`[data-partner="${id}"]`);
+      if (!list || !card || list.scrollHeight <= list.clientHeight + 2) return;
+      const top = card.offsetTop;
+      const bottom = top + card.offsetHeight;
+      if (top < list.scrollTop || bottom > list.scrollTop + list.clientHeight) {
+        list.scrollTo({
+          top: Math.max(0, top - (list.clientHeight - card.offsetHeight) / 2),
+          behavior: "smooth",
+        });
+      }
+    });
+  };
 
   const pickCity = (city: City) => {
     const here = ALL.filter((p) => p.city === city);
@@ -34,6 +53,7 @@ export default function PartnerMap() {
     const next =
       current.city === city ? here[(here.indexOf(current) + 1) % here.length] : here[0];
     setSelectedId(next.id);
+    scrollListTo(next.id);
   };
 
   const korea = current.country === "korea";
@@ -41,11 +61,11 @@ export default function PartnerMap() {
   return (
     <div className={styles.mapGrid}>
       <div className={styles.listWrap}>
-        <ul className={styles.list} aria-label="Partners">
+        <ul ref={listRef} className={styles.list} aria-label="Partners">
           {ALL.map((p) => {
             const on = p.id === current.id;
             return (
-              <li key={p.id}>
+              <li key={p.id} data-partner={p.id}>
                 <button
                   type="button"
                   className={`${styles.pcard} ${on ? styles.pcardOn : ""}`}

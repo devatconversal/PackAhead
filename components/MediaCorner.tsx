@@ -76,8 +76,8 @@ export default function MediaCorner() {
                 </div>
                 <span className={styles.arrow}>
                   <span className={styles.arrowTrack}>
-                    <span className={styles.arrowIcon}>→</span>
-                    <span className={styles.arrowIcon}>→</span>
+                    <span className={styles.arrowIcon}>↓</span>
+                    <span className={styles.arrowIcon}>↓</span>
                   </span>
                 </span>
               </a>
