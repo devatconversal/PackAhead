@@ -15,7 +15,7 @@ export default function About() {
                 PackAhead uses artificial intelligence to speed up biological innovation
                 and turn cellulose into a new generation of sustainable packaging films.
                 The project runs for four years and brings research institutions and
-                companies together across Europe, with a link to South Korea.
+                companies together across Europe and South Korea.
               </p>
               <SwapButton href="/about" label="READ ABOUT THE PROJECT" variant="light" />
             </div>
