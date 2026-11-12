@@ -76,12 +76,12 @@ const AUDIENCES = [
 const CONSORTIUM = [
   { label: "Coordinator", value: "VTT Technical Research Centre of Finland" },
   { label: "Partners", value: "13 research institutions and companies" },
-  { label: "Reach", value: "Across Europe, with a link to South Korea" },
+  { label: "Reach", value: "Across Europe and South Korea" },
   {
     label: "Network",
     value: "Working with the S3 Partnership Food Packaging, a European network of cluster organisations",
   },
-  { label: "Funding", value: "Funded by the European Union, Grant Agreement No. 101287475" },
+  { label: "Funding", value: "Co-funded by the European Union, Grant Agreement No. 101287475" },
 ];
 
 const MILESTONES = [
@@ -217,7 +217,7 @@ export default function AboutPage() {
               </h2>
               <p className={ui.lead}>
                 PackAhead brings together 13 partners: universities, research centres and
-                companies that each cover a link in the chain, from enzymes and
+                cluster organisations that each cover a link in the chain, from enzymes and
                 biotechnology to film production, packaging and recycling. Together they
                 span Europe, with a link to South Korea.
               </p>
