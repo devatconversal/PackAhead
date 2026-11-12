@@ -21,7 +21,7 @@
   padding-bottom: var(--space-section);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   .panel {
     border-radius: var(--radius-md);
   }

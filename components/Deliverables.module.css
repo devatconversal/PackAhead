@@ -42,7 +42,7 @@
   color: var(--ink-soft);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 820px) {
   .layout > :first-child,
   .layout > :last-child {
     grid-column: 1 / -1;

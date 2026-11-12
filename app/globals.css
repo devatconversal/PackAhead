@@ -4,13 +4,13 @@
    Every layout, type and shape decision on the site points at these values.
    Change a value here and it changes everywhere.
 
-   GRID: 1440px wide, 144px margin, 12 columns, 24px gutter.
-   At 1440px that leaves 1152px of content: 12 columns of 74px.
+   GRID (Carloma-style): 1440px wide, 80px margin, 12 columns, 16px gutter.
+   At 1440px that leaves 1280px of content: 12 columns of 92px.
+   The margin is fluid: 5.6% of the screen width, between 20px and 80px.
 
-   Breakpoints (only these three are used anywhere):
-     1100px  tablet landscape / small laptop
-      900px  tablet
-      720px  phone
+   Breakpoints (only these two are used anywhere):
+     1180px  tablet landscape / small laptop
+      820px  tablet portrait and phone (12-column layouts stack below this)
    ========================================================================== */
 
 :root {
@@ -34,14 +34,14 @@
 
   /* ---------- Grid ---------- */
   --grid-max: 1440px;
-  /* Outer margin: 144px on a 1440px screen, scaling down on smaller ones. */
-  --grid-margin: clamp(24px, 10vw, 144px);
-  --gutter: 24px;
+  /* Outer margin: 80px on a 1440px screen, ~22px on a phone. */
+  --grid-margin: clamp(20px, 5.6vw, 80px);
+  --gutter: 16px;
   --grid-columns: 12;
 
   /* Dark rounded cards (header, dark bands, footer) sit 14px in from the
      screen edge. Their content starts on the grid line *minus* that inset,
-     so text inside the card still lines up with the 144px grid. */
+     so text inside the card still lines up with the page grid. */
   --frame-inset: 14px;
   --frame-margin: calc(var(--grid-margin) - var(--frame-inset));
 
@@ -82,17 +82,8 @@
   --label-size: 12px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 820px) {
   :root {
-    --h2-size: 44px;
-    --h2-sm-size: 34px;
-  }
-}
-
-@media (max-width: 720px) {
-  :root {
-    --grid-margin: 24px;
-    --gutter: 16px;
     --frame-inset: 8px;
     --header-padding: 16px;
     --footer-padding: 24px;

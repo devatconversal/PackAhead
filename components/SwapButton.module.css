@@ -57,7 +57,7 @@
 }
 
 /* On phones the button fills the column and long labels wrap. */
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   .group {
     width: 100%;
     max-width: 100%;
