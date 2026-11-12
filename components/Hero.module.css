@@ -1,4 +1,4 @@
-/* Uses .frame-container: text on the page grid, nav row bleeds out. */
+/* Uses .header-container: outside the page grid on purpose (see --header-*). */
 .inner {
   position: relative;
   z-index: 1;
@@ -81,8 +81,7 @@
 
 @media (max-width: 720px) {
   .inner {
-    padding-top: 16px;
-    padding-bottom: 24px;
+    padding: 16px 24px 24px;
   }
   .heading {
     font-size: 40px;

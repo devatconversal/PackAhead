@@ -45,9 +45,21 @@
   --frame-inset: 14px;
   --frame-margin: calc(var(--grid-margin) - var(--frame-inset));
 
-  /* Deliberate deviation: the logo + navigation row in the header reaches
-     90px outside the grid (as in the design). Set to 0px to put it on the grid. */
-  --nav-bleed: 90px;
+  /* Deliberate deviation: headers and footer do NOT follow the page grid.
+     Header content (logo, nav, title, facts): max 1520px wide, 40px side
+     padding inside the frame → starts 54px from the screen edge.
+     Footer content: max 1440px wide, 44px side padding inside the frame
+     → starts 58px from the screen edge.
+     To put them on the grid instead, use .frame-container in PageHeader,
+     Hero and FramedPanel. */
+  --header-max: 1520px;
+  --header-padding: 40px;
+  --footer-max: 1440px;
+  --footer-padding: 44px;
+
+  /* Optional extra reach of the logo + nav row beyond the header content
+     (0px = aligned with the header title). */
+  --nav-bleed: 0px;
 
   /* Kept for older references: same as the grid width. */
   --max-width: var(--grid-max);
@@ -70,12 +82,6 @@
   --label-size: 12px;
 }
 
-@media (max-width: 1100px) {
-  :root {
-    --nav-bleed: 0px;
-  }
-}
-
 @media (max-width: 900px) {
   :root {
     --h2-size: 44px;
@@ -88,6 +94,8 @@
     --grid-margin: 24px;
     --gutter: 16px;
     --frame-inset: 8px;
+    --header-padding: 16px;
+    --footer-padding: 24px;
     --space-section: 72px;
     --space-title: 32px;
     --space-title-lg: 40px;
@@ -162,6 +170,24 @@ button {
   margin: 0 auto;
   padding-left: var(--frame-margin);
   padding-right: var(--frame-margin);
+}
+
+/* Header and footer content: outside the page grid on purpose (see the
+   --header-* and --footer-* tokens above). */
+.header-container {
+  width: 100%;
+  max-width: var(--header-max);
+  margin: 0 auto;
+  padding-left: var(--header-padding);
+  padding-right: var(--header-padding);
+}
+
+.footer-container {
+  width: 100%;
+  max-width: var(--footer-max);
+  margin: 0 auto;
+  padding-left: var(--footer-padding);
+  padding-right: var(--footer-padding);
 }
 
 /* The 12-column grid. Children place themselves with grid-column. */

@@ -1,5 +1,5 @@
-/* The logo + nav row reaches --nav-bleed outside the grid on each side
-   (a deliberate deviation, see globals.css). */
+/* Optional: --nav-bleed lets the logo + nav row reach beyond the header
+   content (0px by default, see globals.css). */
 .row {
   position: relative;
   z-index: 5;

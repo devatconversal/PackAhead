@@ -22,7 +22,7 @@ export default function PageHeader({
     <header id="top" className={styles.outer}>
       <div className={styles.frame}>
         <AuroraBackground />
-        <div className={`frame-container ${styles.inner} ${facts ? styles.withFacts : ""}`}>
+        <div className={`header-container ${styles.inner} ${facts ? styles.withFacts : ""}`}>
           <SiteNav />
 
           <div className={styles.copy}>

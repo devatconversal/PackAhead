@@ -14,8 +14,8 @@
   border-radius: inherit;
 }
 
-/* Text sits on the page grid (via .frame-container); the nav row inside
-   bleeds out of it on purpose, see SiteNav.module.css. */
+/* Header content uses .header-container: outside the page grid on purpose
+   (see --header-* in globals.css). */
 .inner {
   position: relative;
   z-index: 1;

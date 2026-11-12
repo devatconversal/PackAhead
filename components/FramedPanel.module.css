@@ -1,5 +1,5 @@
 /* Dark rounded panel (footer), inset by --frame-inset. Its content uses
-   .frame-container, so it lines up with the page grid. */
+   .footer-container: outside the page grid on purpose (see --footer-*). */
 .outer {
   width: 100%;
   padding: var(--frame-inset);
