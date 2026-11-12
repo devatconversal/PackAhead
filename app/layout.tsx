@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import FeedbackWidget from "@/components/FeedbackWidget";
 import { inter, plexSans } from "@/lib/fonts";
 import "./globals.css";
 
@@ -21,12 +21,7 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1!important;transform:none!important;}`}</style>
         </noscript>
         {children}
-        <Script src="https://feedback.conversal.io/widget.js" strategy="afterInteractive" />
-        <Script id="conversal-feedback-init" strategy="afterInteractive">
-          {`window.addEventListener("load", function () {
-            window.ConversalFeedback.init({ embedKey: "cfe_39415fd278376154b442019fe8f13056120a84b9bab27a6a" });
-          });`}
-        </Script>
+        <FeedbackWidget />
       </body>
     </html>
   );
