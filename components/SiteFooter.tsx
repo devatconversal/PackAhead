@@ -44,9 +44,11 @@ export default function SiteFooter() {
               intelligence.
             </p>
           </div>
-          <FooterColumn title="PROJECT" links={PROJECT_LINKS} />
-          <FooterColumn title="RESOURCES" links={RESOURCE_LINKS} />
-          <FooterColumn title="FOLLOW" links={FOLLOW_LINKS} />
+          <div className={styles.links}>
+            <FooterColumn title="PROJECT" links={PROJECT_LINKS} />
+            <FooterColumn title="RESOURCES" links={RESOURCE_LINKS} />
+            <FooterColumn title="FOLLOW" links={FOLLOW_LINKS} />
+          </div>
         </div>
 
         <div className={styles.bottom}>

@@ -65,68 +65,118 @@
   display: flex;
 }
 
-.doc {
+/* Document card with a coloured cover (the "kaartvariant" artboard). The
+   whole card is the link. */
+.card {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  min-height: 268px;
-  padding: 24px;
+  overflow: hidden;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: #fff;
+  color: var(--ink);
   transition: border-color 0.25s ease;
 }
 
-.doc:hover {
+.card:hover {
   border-color: var(--blue);
-}
-
-.docTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.tchip {
-  display: inline-flex;
-  align-items: center;
-  height: 28px;
-  padding: 0 10px;
-  border-radius: var(--radius-sm);
-  font-weight: 500;
-  font-size: var(--label-size);
-  letter-spacing: var(--tracking-label);
   color: var(--ink);
 }
 
-.tDeliverable {
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  padding: 20px 24px 22px;
+  background: var(--tint-blue);
+  color: var(--ink);
+}
+
+/* Folded top-right corner, like a sheet of paper. */
+.cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(225deg, #fff 50%, rgba(22, 6, 105, 0.1) 50%);
+  border-bottom-left-radius: 6px;
+}
+
+.coverType {
+  font-weight: 500;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
+  line-height: 1.5;
+}
+
+.coverCode {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-title);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .coverCode {
+  transform: translateY(-4px);
+}
+
+.cDeliverable .cover {
   background: var(--tint-blue);
 }
 
-.tPublication {
+.cPublication .cover {
   background: #defafe;
 }
 
-.tPress {
+.cPress .cover {
   background: var(--mint);
 }
 
-.tFactsheet {
-  background: #fff;
-  box-shadow: inset 0 0 0 1px var(--line);
+.cFactsheet .cover {
+  background: var(--blue);
+  color: #fff;
 }
 
-.docFoot {
+.cFactsheet .cover::after {
+  background: linear-gradient(225deg, #fff 50%, rgba(255, 255, 255, 0.2) 50%);
+}
+
+.body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 24px 20px;
+}
+
+.foot {
   margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
+}
+
+/* The arrow link inside the card reacts when the whole card is hovered. */
+.card:hover .foot > :last-child {
+  color: var(--blue);
+}
+
+.card:hover .foot > :last-child > span {
+  transform: translateX(3px);
+}
+
+.card:hover .foot > :last-child > span[class*="arrDown"] {
+  transform: translateY(3px);
 }
 
 .empty {
@@ -143,8 +193,8 @@
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .doc {
-    min-height: 0;
+  .cover {
+    height: 168px;
   }
   .filters {
     flex-wrap: nowrap;

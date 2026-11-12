@@ -5,14 +5,15 @@ import ui from "@/components/ui.module.css";
 import { DOCUMENTS, TYPE_FILTERS, TYPE_LABEL, type DocType } from "./documents";
 import styles from "./media.module.css";
 
-const CHIP_CLASS: Record<DocType, string> = {
-  deliverable: styles.tDeliverable,
-  publication: styles.tPublication,
-  press: styles.tPress,
-  factsheet: styles.tFactsheet,
+// Cover colour per document type (as in the "kaartvariant" artboard).
+const CARD_CLASS: Record<DocType, string> = {
+  deliverable: styles.cDeliverable,
+  publication: styles.cPublication,
+  press: styles.cPress,
+  factsheet: styles.cFactsheet,
 };
 
-/** Filterable grid of public documents. */
+/** Filterable grid of public documents, shown as cards with a coloured cover. */
 export default function DocumentLibrary() {
   const [filter, setFilter] = useState<DocType | "all">("all");
   const shown = DOCUMENTS.filter((d) => filter === "all" || d.type === filter);
@@ -49,26 +50,31 @@ export default function DocumentLibrary() {
         <ul className={styles.grid}>
           {shown.map((d) => (
             <li key={d.title}>
-              <article className={styles.doc}>
-                <div className={styles.docTop}>
-                  <span className={`${styles.tchip} ${CHIP_CLASS[d.type]}`}>{TYPE_LABEL[d.type]}</span>
+              <a href={d.url} className={`${styles.card} ${CARD_CLASS[d.type]}`}>
+                <div className={styles.cover}>
+                  <span className={styles.coverType}>{TYPE_LABEL[d.type]}</span>
+                  <span className={styles.coverCode} aria-hidden="true">
+                    {d.code}
+                  </span>
+                </div>
+                <div className={styles.body}>
                   <span className={ui.label}>{d.date}</span>
-                </div>
-                <h3 className={ui.cardTitle}>{d.title}</h3>
-                <p className={ui.body}>{d.desc}</p>
-                <div className={styles.docFoot}>
-                  <span className={ui.label}>{d.meta}</span>
-                  <a href={d.url} className={ui.visit} aria-label={`${d.action}: ${d.title}`}>
-                    {d.action}{" "}
-                    <span
-                      className={d.action === "Download" ? `${ui.arr} ${ui.arrDown}` : ui.arr}
-                      aria-hidden="true"
-                    >
-                      {d.action === "Download" ? "↓" : "→"}
+                  <h3 className={ui.cardTitle}>{d.title}</h3>
+                  <p className={ui.body}>{d.desc}</p>
+                  <div className={styles.foot}>
+                    <span className={ui.label}>{d.meta}</span>
+                    <span className={ui.visit}>
+                      {d.action}{" "}
+                      <span
+                        className={d.action === "Download" ? `${ui.arr} ${ui.arrDown}` : ui.arr}
+                        aria-hidden="true"
+                      >
+                        {d.action === "Download" ? "↓" : "→"}
+                      </span>
                     </span>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </a>
             </li>
           ))}
         </ul>

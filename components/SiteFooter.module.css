@@ -35,8 +35,9 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Brand on columns 1–4, Project 5–7, Resources 8–10, Follow 11–12:
-   one even row with no empty gap. */
+/* Brand on columns 1–4. The three link columns share columns 7–12, the
+   same span as the newsletter form above: Project starts on the form's
+   left edge and Follow ends on its right edge. */
 .columns {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
@@ -51,16 +52,11 @@
   gap: 20px;
 }
 
-.brandCol + .col {
-  grid-column: 5 / span 3;
-}
-
-.brandCol + .col + .col {
-  grid-column: 8 / span 3;
-}
-
-.brandCol + .col + .col + .col {
-  grid-column: 11 / span 2;
+.links {
+  grid-column: 7 / span 6;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gutter);
 }
 
 .logoWrap {
@@ -163,10 +159,11 @@
   .brandCol {
     grid-column: 1 / -1;
   }
-  .brandCol + .col,
-  .brandCol + .col + .col,
-  .brandCol + .col + .col + .col {
-    grid-column: span 6;
+  .links {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px var(--gutter);
   }
   .bottom {
     display: flex;
