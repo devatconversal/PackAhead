@@ -17,8 +17,7 @@ export default function MediaCornerPage() {
       <PageHeader
         title={
           <>
-            Media <br />
-            corner.
+            Media corner.
           </>
         }
         intro="All public documents from the PackAhead project in one place, from deliverables and scientific publications to press releases. Free to read and download."

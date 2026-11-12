@@ -100,11 +100,13 @@
   min-height: 420px;
 }
 
+/* Fade-out at the bottom of the list. It covers the full width of the
+   cards and stops just before the 8px scrollbar, so the bar stays visible. */
 .listWrap::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 24px;
+  right: 8px;
   bottom: 0;
   height: 56px;
   background: linear-gradient(rgba(241, 243, 247, 0), var(--surface-alt));
@@ -121,10 +123,12 @@
   padding: 0 16px 40px 0;
   list-style: none;
   overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: var(--blue) var(--line);
 }
 
+/* Always-visible custom scrollbar (Chrome, Safari, Edge). The standard
+   scrollbar-width/-color properties are deliberately NOT set for these
+   browsers: in recent Chrome they override this styling and fall back to
+   the macOS overlay scrollbar that only appears while scrolling. */
 .list::-webkit-scrollbar {
   width: 8px;
 }
@@ -137,6 +141,14 @@
 .list::-webkit-scrollbar-thumb {
   background: var(--blue);
   border-radius: 8px;
+}
+
+/* Firefox has no ::-webkit-scrollbar: use the standard properties there. */
+@supports not selector(::-webkit-scrollbar) {
+  .list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) var(--line);
+  }
 }
 
 .pcard {
