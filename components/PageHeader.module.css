@@ -59,6 +59,16 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Variant: the last fact is exactly as wide as its value on one line; the
+   other three size to their content and share the remaining space. */
+.factsWideLast {
+  grid-template-columns: repeat(3, auto) max-content;
+}
+
+.factsWideLast > :last-child .factValue {
+  white-space: nowrap;
+}
+
 .fact {
   display: flex;
   flex-direction: column;
@@ -113,5 +123,8 @@
   }
   .factValue {
     font-size: 28px;
+  }
+  .factsWideLast > :last-child .factValue {
+    white-space: normal;
   }
 }

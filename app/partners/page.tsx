@@ -33,6 +33,7 @@ export default function PartnersPage() {
         }
         intro="Universities, research centres and companies that each cover a link in the chain, from enzymes and biotechnology to film production, packaging and recycling."
         facts={FACTS}
+        wideLastFact
       />
 
       {/* Coordinator */}
