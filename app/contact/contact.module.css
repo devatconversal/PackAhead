@@ -1,4 +1,4 @@
-/* Form on columns 1–7, "Who to contact" on columns 8–12. */
+/* Form on columns 1–7, column 8 left empty as breathing room, "Who to contact" on columns 9–12. */
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
@@ -12,7 +12,7 @@
 }
 
 .grid > :last-child {
-  grid-column: 8 / span 5;
+  grid-column: 9 / span 4;
 }
 
 /* ---------- Form ---------- */
@@ -113,7 +113,11 @@
   padding-top: 8px;
 }
 
+/* The aside is only 4 columns wide: the label sits above its details so
+   the e-mail addresses always fit. */
 .contactRow {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
   padding: 22px 0;
 }
 
