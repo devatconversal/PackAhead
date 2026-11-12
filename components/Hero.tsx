@@ -6,7 +6,7 @@ const PARTNER_WIDTHS = [128, 96, 146, 110, 132, 88, 120, 104];
 
 export default function Hero() {
   return (
-    <div className={`container ${styles.inner}`}>
+    <div className={`frame-container ${styles.inner}`}>
       <SiteNav />
 
       <div>
@@ -14,7 +14,7 @@ export default function Hero() {
         <div className={styles.subRow}>
           <p className={styles.sub}>
             AI-driven enzyme design and cellulose films for recyclable food packaging,
-            developed by 18 partners.
+            developed by 13 partners.
           </p>
           <SwapButton href="/about" label="DISCOVER THE PROJECT" variant="dark" />
         </div>

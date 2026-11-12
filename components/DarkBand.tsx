@@ -7,7 +7,7 @@ export default function DarkBand({ id, children }: { id?: string; children: Reac
     <div id={id} className={styles.outer}>
       <div className={styles.panel}>
         <AuroraBackground />
-        <div className={`container ${styles.inner}`}>{children}</div>
+        <div className={`frame-container ${styles.inner}`}>{children}</div>
       </div>
     </div>
   );

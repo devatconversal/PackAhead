@@ -207,7 +207,7 @@ export default function AboutPage() {
       </section>
 
       {/* Consortium */}
-      <section className={`${ui.section} ${styles.consortium}`}>
+      <section className={`${ui.section} ${ui.flushTop}`}>
         <div className={`container ${ui.two}`}>
           <Reveal>
             <div className={ui.whyCopy}>
@@ -236,8 +236,8 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className={`${ui.section} ${ui.flushTop} ${styles.timeline}`}>
-        <div className={`container ${ui.stackMd}`}>
+      <section className={`${ui.section} ${ui.flushTop}`}>
+        <div className={`container ${ui.stack}`}>
           <Reveal>
             <h2 className={ui.h2}>Four years, one clear horizon</h2>
           </Reveal>

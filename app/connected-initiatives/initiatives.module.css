@@ -1,10 +1,10 @@
 .panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 56px;
+  gap: var(--space-title);
   align-items: start;
   padding: 44px;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   background: var(--tint-blue);
 }
 
@@ -30,7 +30,7 @@
   gap: 8px;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-label);
   line-height: 1.5;
 }
 
@@ -43,10 +43,11 @@
   background: var(--mint);
 }
 
+/* Three cards = 4 grid columns each. */
 .projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--gutter);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -80,7 +81,7 @@
 @media (max-width: 720px) {
   .panel {
     padding: 24px;
-    border-radius: 18px;
+    border-radius: var(--radius-md);
   }
   .projects {
     grid-template-columns: minmax(0, 1fr);

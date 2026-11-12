@@ -63,8 +63,8 @@ export default function PartnersPage() {
       </section>
 
       {/* All partners */}
-      <section id="partners" className={`${ui.section} ${styles.allPartners}`}>
-        <div className={`container ${ui.stackMd}`}>
+      <section id="partners" className={ui.section}>
+        <div className={`container ${ui.stack}`}>
           <Reveal>
             <h2 className={ui.h2}>Every link in the chain</h2>
           </Reveal>
@@ -89,7 +89,7 @@ export default function PartnersPage() {
 
       {/* Where we are */}
       <section className={`${ui.section} ${styles.where}`}>
-        <div className={`container ${ui.stackMd}`}>
+        <div className={`container ${ui.stack}`}>
           <div className={ui.two}>
             <h2 className={ui.h2}>
               From Finland <br />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { inter, plexSans, plexMono } from "@/lib/fonts";
+import { inter, plexSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${plexSans.variable}`}>
       <body>
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important;}`}</style>

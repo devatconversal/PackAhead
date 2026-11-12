@@ -1,6 +1,10 @@
+/* The logo + nav row reaches --nav-bleed outside the grid on each side
+   (a deliberate deviation, see globals.css). */
 .row {
   position: relative;
   z-index: 5;
+  margin-left: calc(-1 * var(--nav-bleed));
+  margin-right: calc(-1 * var(--nav-bleed));
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -18,7 +22,7 @@
   flex-wrap: wrap;
   gap: 6px;
   padding: 6px;
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -30,10 +34,11 @@
   align-items: center;
   height: 40px;
   padding: 0 18px;
-  border-radius: 10px;
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: var(--tracking-label);
   color: #fff;
   white-space: nowrap;
   transition: background 0.18s ease;
@@ -70,7 +75,7 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
@@ -131,7 +136,7 @@
   flex-direction: column;
   gap: 2px;
   padding: 8px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: #fff;
   box-shadow: 0 24px 48px -12px rgba(22, 6, 105, 0.45);
 }
@@ -143,10 +148,11 @@
   justify-content: space-between;
   min-height: 56px;
   padding: 0 16px;
-  border-radius: 10px;
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: var(--tracking-label);
   color: var(--ink);
 }
 

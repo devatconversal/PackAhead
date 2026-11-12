@@ -1,16 +1,19 @@
 /* ---------- Coordinator ---------- */
 
+/* Card on the full grid: visual on columns 1–4, text on 6–12 (the card's
+   20px padding is its own inner margin). */
 .coord {
   display: grid;
-  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
   align-items: center;
   padding: 20px;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   background: var(--tint-blue);
 }
 
 .coordVisual {
+  grid-column: 1 / span 4;
   height: 240px;
   background: #fff;
   font-size: 34px;
@@ -18,6 +21,7 @@
 }
 
 .coordCopy {
+  grid-column: 6 / span 7;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -30,14 +34,11 @@
 
 /* ---------- Partner grid ---------- */
 
-.allPartners {
-  padding-bottom: 120px;
-}
-
+/* Four cards = 3 grid columns each. */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--gutter);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -57,12 +58,12 @@
   justify-content: center;
   height: 120px;
   padding: 0 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: var(--surface-alt);
   font-family: var(--font-sans), sans-serif;
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-title);
   color: var(--ink-soft);
   text-align: center;
 }
@@ -77,11 +78,21 @@
   max-width: 520px;
 }
 
+/* Partner list on columns 1–4, map on columns 5–12. */
 .mapGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
-  gap: 24px;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--gutter);
   align-items: stretch;
+}
+
+.mapGrid > :first-child {
+  grid-column: 1 / span 4;
+}
+
+.mapGrid > :last-child {
+  grid-column: 5 / span 8;
 }
 
 .listWrap {
@@ -135,7 +146,7 @@
   width: 100%;
   padding: 22px 24px;
   border: 0;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: #fff;
   color: var(--ink);
   text-align: left;
@@ -159,7 +170,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-title);
 }
 
 .pcRole {
@@ -174,8 +185,8 @@
 .pcMeta {
   margin-top: 6px;
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -187,7 +198,7 @@
 .mapCard {
   position: relative;
   padding: 28px;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   background: #fff;
 }
 
@@ -259,7 +270,7 @@
   z-index: 2;
   white-space: nowrap;
   padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: #fff;
   color: var(--ink);
   font-size: 14px;
@@ -282,7 +293,7 @@
   flex-direction: column;
   gap: 10px;
   padding: 14px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: #fff;
   border: 1px solid var(--line);
 }
@@ -294,8 +305,8 @@
 
 .insetLabel {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
 }
 
 /* ---------- Responsive ---------- */
@@ -304,8 +315,9 @@
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .mapGrid {
-    grid-template-columns: minmax(0, 1fr);
+  .mapGrid > :first-child,
+  .mapGrid > :last-child {
+    grid-column: 1 / -1;
   }
   .listWrap {
     order: 2;
@@ -319,8 +331,11 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .coord {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    row-gap: 24px;
+  }
+  .coordVisual,
+  .coordCopy {
+    grid-column: 1 / -1;
   }
   .coordCopy {
     padding: 0 8px 8px;
@@ -332,14 +347,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .coord {
-    border-radius: 18px;
+    border-radius: var(--radius-md);
     padding: 12px;
   }
   .coordVisual {
     height: 180px;
-  }
-  .allPartners {
-    padding-bottom: 72px;
   }
   .mapCard {
     padding: 16px;

@@ -1,28 +1,37 @@
 .section {
   width: 100%;
   background: var(--surface);
-  padding: 120px 0;
+  padding: var(--space-section) 0;
 }
 
+/* Heading on columns 1–4, list on columns 6–12. */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 100px;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--space-title);
   align-items: start;
+}
+
+.layout > :first-child {
+  grid-column: 1 / span 4;
+}
+
+.layout > :last-child {
+  grid-column: 6 / span 7;
 }
 
 .heading {
   font-weight: 400;
-  font-size: 40px;
+  font-size: var(--h2-sm-size);
   line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+    color: var(--ink);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 60px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-title) var(--gutter);
 }
 
 .item {
@@ -34,11 +43,11 @@
 }
 
 @media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .layout > :first-child,
+  .layout > :last-child {
+    grid-column: 1 / -1;
   }
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -3,6 +3,7 @@ import styles from "./SwapButton.module.css";
 
 type Props = {
   label: string;
+  /** Kept for existing call sites; both variants look the same. */
   variant?: "dark" | "light";
 } & ({ href: string; type?: never } | { href?: never; type: "submit" | "button" });
 
@@ -10,16 +11,13 @@ type Props = {
  * The two-part blue/mint button. Pass `href` for a link, or `type` to
  * render a real <button> (form submits).
  */
-export default function SwapButton({ href, type, label, variant = "dark" }: Props) {
-  const className = `${styles.group} ${variant === "light" ? styles.light : styles.dark}`;
+export default function SwapButton({ href, type, label }: Props) {
+  const className = styles.group;
   const inner = (
     <>
       <span className={styles.main}>{label}</span>
       <span className={styles.arrow} aria-hidden="true">
-        <span className={styles.track}>
-          <span className={styles.arrowIcon}>→</span>
-          <span className={styles.arrowIcon}>→</span>
-        </span>
+        →
       </span>
     </>
   );

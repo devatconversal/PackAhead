@@ -1,29 +1,29 @@
 .section {
   width: 100%;
   background: var(--surface);
-  padding: 0 0 110px;
+  padding: 0 0 var(--space-section);
 }
 
 .panel {
   background: var(--blue);
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   padding: 72px 56px 64px;
 }
 
 .heading {
-  margin: 0 0 80px;
+  margin: 0 0 var(--space-title-lg);
   max-width: 720px;
   font-weight: 400;
-  font-size: 52px;
+  font-size: var(--h2-size);
   line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: #fff;
+    color: #fff;
 }
 
+/* Four stats with the standard gutter (inside the blue card's padding). */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gutter);
 }
 
 .stat {
@@ -38,8 +38,7 @@
   font-family: var(--font-sans), sans-serif;
   font-size: 60px;
   font-weight: 400;
-  letter-spacing: -0.03em;
-  color: #fff;
+    color: #fff;
 }
 
 .label {
@@ -49,19 +48,15 @@
 
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .heading {
-    font-size: 36px;
-    margin-bottom: 48px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .panel {
     padding: 56px 32px 48px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 720px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

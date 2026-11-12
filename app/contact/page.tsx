@@ -39,7 +39,7 @@ export default function ContactPage() {
         intro="A question about the project, a press request or an idea for working together? Send a message and the right partner will get back to you."
       />
 
-      <section className={`${ui.section} ${styles.section}`}>
+      <section className={ui.section}>
         <div className={`container ${styles.grid}`}>
           <ContactForm />
 

@@ -1,11 +1,11 @@
 .outer {
-  padding: 14px;
+  padding: var(--frame-inset);
   background: var(--surface);
 }
 
 .frame {
   position: relative;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   /* Not overflow:hidden — the mobile menu panel hangs out of the card. */
   isolation: isolate;
 }
@@ -14,16 +14,16 @@
   border-radius: inherit;
 }
 
+/* Text sits on the page grid (via .frame-container); the nav row inside
+   bleeds out of it on purpose, see SiteNav.module.css. */
 .inner {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 120px;
-  width: 100%;
-  max-width: 1520px;
-  margin: 0 auto;
-  padding: 40px 40px 72px;
+  padding-top: 40px;
+  padding-bottom: 72px;
 }
 
 .withFacts {
@@ -41,7 +41,6 @@
   font-weight: 400;
   font-size: 82px;
   line-height: 1.02;
-  letter-spacing: -0.02em;
   color: #fff;
 }
 
@@ -52,10 +51,11 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Four facts = 3 grid columns each. */
 .facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--gutter);
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -71,13 +71,13 @@
   font-family: var(--font-sans), sans-serif;
   font-size: 40px;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-title);
 }
 
 .factLabel {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -92,15 +92,13 @@
 }
 
 @media (max-width: 720px) {
-  .outer {
-    padding: 8px;
-  }
   .frame {
-    border-radius: 18px;
+    border-radius: var(--radius-md);
   }
   .inner {
     gap: 40px;
-    padding: 16px 16px 28px;
+    padding-top: 16px;
+    padding-bottom: 28px;
   }
   .title {
     font-size: 40px;
@@ -112,7 +110,7 @@
     font-size: 18px;
   }
   .facts {
-    gap: 20px 16px;
+    row-gap: 20px;
   }
   .factValue {
     font-size: 28px;

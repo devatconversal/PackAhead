@@ -1,23 +1,23 @@
 .section {
   width: 100%;
   background: var(--surface);
-  padding: 110px 0;
+  padding: var(--space-section) 0;
 }
 
 .heading {
-  margin: 0 0 64px;
-  max-width: 760px;
+  margin: 0 0 var(--space-title-lg);
+  max-width: 820px;
   font-weight: 400;
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+  font-size: var(--h2-size);
+  line-height: 1.05;
+    color: var(--ink);
 }
 
+/* Three cards = 4 grid columns each. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gutter);
 }
 
 .card {
@@ -25,7 +25,7 @@
   flex-direction: column;
   gap: 18px;
   padding: 34px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: var(--tint-blue);
   min-height: 300px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
@@ -37,15 +37,18 @@
 }
 
 .number {
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   color: var(--blue);
 }
 
 .cardTitle {
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: var(--tracking-title);
   color: var(--ink);
 }
 
@@ -57,9 +60,6 @@
 
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
-  }
-  .heading {
-    font-size: 34px;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

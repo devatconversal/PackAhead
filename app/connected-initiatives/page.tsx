@@ -188,7 +188,7 @@ export default function ConnectedInitiativesPage() {
 
       {/* Sister projects */}
       <section id="projects" className={`${ui.section}`}>
-        <div className={`container ${ui.stackMd}`}>
+        <div className={`container ${ui.stack}`}>
           <div className={ui.two}>
             <h2 className={ui.h2}>
               Sister projects <br />

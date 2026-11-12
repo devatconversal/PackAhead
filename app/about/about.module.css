@@ -1,13 +1,15 @@
 .investigates {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: var(--space-title-lg);
 }
 
+/* Deliberate deviation: five steps cannot share a 12-column grid evenly,
+   so they are five equal columns with the standard gutter. */
 .steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--gutter);
 }
 
 .stepWrap {
@@ -25,14 +27,15 @@
 
 .stepNumber {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
 }
 
+/* Three goals = 4 grid columns each. */
 .goals {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--gutter);
 }
 
 .goal {
@@ -42,22 +45,15 @@
   padding: 34px;
 }
 
-.consortium {
-  padding-top: 10px;
-}
-
 .consRows {
   padding-top: 10px;
 }
 
-.timeline {
-  padding-bottom: 120px;
-}
-
+/* Four milestones = 3 grid columns each. */
 .miles {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--gutter);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -75,8 +71,8 @@
   padding-bottom: 14px;
   border-bottom: 2px solid var(--blue);
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -104,9 +100,6 @@
 }
 
 @media (max-width: 720px) {
-  .investigates {
-    gap: 40px;
-  }
   .steps,
   .miles {
     grid-template-columns: minmax(0, 1fr);
@@ -116,8 +109,5 @@
   }
   .goal {
     padding: 26px;
-  }
-  .timeline {
-    padding-bottom: 72px;
   }
 }

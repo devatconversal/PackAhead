@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 import styles from "./Numbers.module.css";
 
 const STATS = [
-  { value: "18", label: "partners across Europe" },
+  { value: "13", label: "partners across Europe" },
   { value: "4", label: "years, starting September 2026" },
   { value: "TRL 7", label: "demonstration of the cellulose films" },
   { value: "2032", label: "target for deployment at scale" },

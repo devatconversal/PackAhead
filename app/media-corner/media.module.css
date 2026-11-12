@@ -1,7 +1,7 @@
 .library {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--space-title);
 }
 
 .libraryHead {
@@ -25,12 +25,12 @@
   gap: 8px;
   height: 44px;
   padding: 0 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: #fff;
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   color: var(--ink);
   cursor: pointer;
   transition: border-color 0.2s ease;
@@ -51,10 +51,11 @@
   opacity: 0.6;
 }
 
+/* Three cards = 4 grid columns each. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--gutter);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -71,7 +72,7 @@
   gap: 14px;
   min-height: 268px;
   padding: 24px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: #fff;
   transition: border-color 0.25s ease;
@@ -94,10 +95,10 @@
   align-items: center;
   height: 28px;
   padding: 0 10px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   color: var(--ink);
 }
 
@@ -148,8 +149,8 @@
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin: 0 -24px;
-    padding: 0 24px 8px;
+    margin: 0 calc(-1 * var(--grid-margin));
+    padding: 0 var(--grid-margin) 8px;
     scrollbar-width: none;
   }
   .fchip {

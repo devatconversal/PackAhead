@@ -1,3 +1,4 @@
+/* Uses .frame-container: text on the page grid, nav row bleeds out. */
 .inner {
   position: relative;
   z-index: 1;
@@ -5,8 +6,8 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  max-width: calc(var(--max-width) + 80px);
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .heading {
@@ -15,7 +16,6 @@
   font-weight: 400;
   font-size: 82px;
   line-height: 1.02;
-  letter-spacing: -0.03em;
   color: #fff;
 }
 
@@ -69,7 +69,7 @@
 .chip {
   flex-shrink: 0;
   height: 30px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.22);
 }
 
@@ -81,12 +81,10 @@
 
 @media (max-width: 720px) {
   .inner {
-    padding: 24px;
+    padding-top: 16px;
+    padding-bottom: 24px;
   }
-}
-
-@media (max-width: 560px) {
   .heading {
-    font-size: 38px;
+    font-size: 40px;
   }
 }

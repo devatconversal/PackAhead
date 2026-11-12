@@ -1,4 +1,20 @@
+/* ==========================================================================
+   PackAhead design tokens
+   --------------------------------------------------------------------------
+   Every layout, type and shape decision on the site points at these values.
+   Change a value here and it changes everywhere.
+
+   GRID: 1440px wide, 144px margin, 12 columns, 24px gutter.
+   At 1440px that leaves 1152px of content: 12 columns of 74px.
+
+   Breakpoints (only these three are used anywhere):
+     1100px  tablet landscape / small laptop
+      900px  tablet
+      720px  phone
+   ========================================================================== */
+
 :root {
+  /* ---------- Colour ---------- */
   --blue: #377FFF;
   --blue-hover: #1F6BEE;
   --mint: #27DC9A;
@@ -15,8 +31,72 @@
   --tint-blue: #EBF2FF;
   --dark-base: #170769;
   --dark-deep: #0b0630;
-  --max-width: 1440px;
+
+  /* ---------- Grid ---------- */
+  --grid-max: 1440px;
+  /* Outer margin: 144px on a 1440px screen, scaling down on smaller ones. */
+  --grid-margin: clamp(24px, 10vw, 144px);
+  --gutter: 24px;
+  --grid-columns: 12;
+
+  /* Dark rounded cards (header, dark bands, footer) sit 14px in from the
+     screen edge. Their content starts on the grid line *minus* that inset,
+     so text inside the card still lines up with the 144px grid. */
+  --frame-inset: 14px;
+  --frame-margin: calc(var(--grid-margin) - var(--frame-inset));
+
+  /* Deliberate deviation: the logo + navigation row in the header reaches
+     90px outside the grid (as in the design). Set to 0px to put it on the grid. */
+  --nav-bleed: 90px;
+
+  /* Kept for older references: same as the grid width. */
+  --max-width: var(--grid-max);
+
+  /* ---------- Shape ---------- */
+  --radius-sm: 10px; /* buttons, inputs, chips, small tiles */
+  --radius-md: 18px; /* cards */
+  --radius-lg: 22px; /* large panels and the dark frames */
+
+  /* ---------- Spacing ---------- */
+  --space-section: 120px; /* vertical padding of a section */
+  --space-title: 40px; /* title → content, compact */
+  --space-title-lg: 64px; /* title → content, roomy */
+
+  /* ---------- Type ---------- */
+  --h2-size: 54px; /* section titles */
+  --h2-sm-size: 40px; /* titles of smaller blocks and long-sentence titles */
+  --tracking-title: -0.02em; /* every heading (h1, h2, h3, big numbers) */
+  --tracking-label: 0.06em; /* every uppercase label, nav item and button */
+  --label-size: 12px;
 }
+
+@media (max-width: 1100px) {
+  :root {
+    --nav-bleed: 0px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --h2-size: 44px;
+    --h2-sm-size: 34px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --grid-margin: 24px;
+    --gutter: 16px;
+    --frame-inset: 8px;
+    --space-section: 72px;
+    --space-title: 32px;
+    --space-title-lg: 40px;
+    --h2-size: 34px;
+    --h2-sm-size: 30px;
+  }
+}
+
+/* ========================================================================== */
 
 *,
 *::before,
@@ -41,6 +121,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-sans), sans-serif;
+  letter-spacing: var(--tracking-title);
   margin: 0;
 }
 
@@ -62,20 +143,35 @@ button {
   font: inherit;
 }
 
+/* ---------- Layout helpers ---------- */
+
+/* Content on the page grid: 1440 max, 144px margins. */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--grid-max);
   margin: 0 auto;
-  padding-left: 44px;
-  padding-right: 44px;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
 }
 
-@media (max-width: 720px) {
-  .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+/* Content inside a dark frame that is inset by --frame-inset: same grid
+   lines as .container, measured from the screen edge. */
+.frame-container {
+  width: 100%;
+  max-width: calc(var(--grid-max) - 2 * var(--frame-inset));
+  margin: 0 auto;
+  padding-left: var(--frame-margin);
+  padding-right: var(--frame-margin);
 }
+
+/* The 12-column grid. Children place themselves with grid-column. */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+/* ---------- Reveal on scroll ---------- */
 
 .reveal {
   opacity: 0;

@@ -1,13 +1,18 @@
 /*
  * Shared building blocks for the inner pages (About, Partners, Connected
- * initiatives, Media corner, Contact). Page-specific grids live next to
- * each page.
+ * initiatives, Media corner, Contact). All sizes come from the tokens in
+ * app/globals.css. Page-specific grids live next to each page.
+ *
+ * Grid note: a row of N equal cards with `gap: var(--gutter)` lands exactly
+ * on the 12-column grid whenever N divides 12 (2, 3, 4, 6), so those rows use
+ * repeat(N, 1fr). Uneven layouts use the explicit 12-column grid.
  */
 
 /* ---------- Sections and layout ---------- */
 
 .section {
-  padding: 120px 0 110px;
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
 }
 
 .flushTop {
@@ -18,29 +23,34 @@
   padding-bottom: 0;
 }
 
+/* Title → content spacing: roomy (64px) and compact (40px). */
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: var(--space-title-lg);
 }
 
 .stackSm {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: var(--space-title);
 }
 
-.stackMd {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
-}
-
+/* Two halves: columns 1–6 and 7–12. */
 .two {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 80px;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 32px;
   align-items: start;
+}
+
+.two > :first-child {
+  grid-column: 1 / span 6;
+}
+
+.two > :last-child {
+  grid-column: 7 / span 6;
 }
 
 /* ---------- Typography ---------- */
@@ -48,17 +58,15 @@
 .h2 {
   max-width: 820px;
   font-weight: 400;
-  font-size: 54px;
+  font-size: var(--h2-size);
   line-height: 1.05;
-  letter-spacing: -0.02em;
 }
 
 .h2Sm {
   max-width: 720px;
   font-weight: 400;
-  font-size: 40px;
+  font-size: var(--h2-sm-size);
   line-height: 1.1;
-  letter-spacing: -0.02em;
 }
 
 .lead {
@@ -80,8 +88,8 @@
 
 .label {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -90,14 +98,12 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
-  letter-spacing: -0.02em;
 }
 
 .cardTitleLg {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.25;
-  letter-spacing: -0.02em;
 }
 
 .onDark {
@@ -151,14 +157,15 @@
   flex-direction: column;
   gap: 14px;
   padding: 26px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: var(--tint-blue);
 }
 
+/* Four cards = 3 grid columns each. */
 .glassGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--gutter);
 }
 
 .glassCard {
@@ -167,7 +174,7 @@
   gap: 12px;
   min-height: 220px;
   padding: 28px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -184,8 +191,8 @@
 
 .glassNumber {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   color: var(--mint);
 }
 
@@ -193,10 +200,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--gutter);
   flex-wrap: wrap;
   padding: 26px 30px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   border: 1px solid rgba(55, 229, 255, 0.4);
 }
 
@@ -209,8 +216,8 @@
 
 .noteLabel {
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
   color: var(--cyan);
 }
 
@@ -220,7 +227,7 @@
   flex-direction: column;
   gap: 14px;
   padding: 16px 16px 22px;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: #fff;
   color: var(--ink);
@@ -251,18 +258,19 @@
   border-bottom: 1px solid var(--line);
 }
 
+/* Label column = 2 grid columns wide. */
 .row {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: calc((100% - 5 * var(--gutter)) / 6 * 2 + var(--gutter)) minmax(0, 1fr);
+  gap: var(--gutter);
   padding: 22px 0;
   border-top: 1px solid var(--line);
   align-items: baseline;
 }
 
+/* Kept as a hook for rows inside narrower blocks; same label width. */
 .rowNarrow {
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 20px;
+  gap: var(--gutter);
 }
 
 /* ---------- Grey "why" band with a white list card ---------- */
@@ -272,29 +280,33 @@
   background: var(--surface-alt);
 }
 
+/* Copy on columns 1–5, list card on columns 7–12. */
 .why {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 48px;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 40px;
   align-items: start;
 }
 
 .whyCopy {
+  grid-column: 1 / span 5;
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
 .whyList {
+  grid-column: 7 / span 6;
   padding: 8px 40px;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   background: #fff;
 }
 
 .whyItem {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: var(--gutter);
   align-items: baseline;
   padding: 30px 0;
   border-top: 1px solid var(--line);
@@ -310,16 +322,18 @@
   .glassGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .whyCopy {
+    grid-column: 1 / span 12;
+  }
+  .whyList {
+    grid-column: 1 / span 12;
+  }
 }
 
 @media (max-width: 900px) {
-  .two {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-  .why {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
+  .two > :first-child,
+  .two > :last-child {
+    grid-column: 1 / -1;
   }
   .whyItem {
     grid-template-columns: minmax(0, 1fr);
@@ -328,26 +342,6 @@
 }
 
 @media (max-width: 720px) {
-  .section {
-    padding-top: 72px;
-    padding-bottom: 72px;
-  }
-  .flushTop {
-    padding-top: 0;
-  }
-  .flushBottom {
-    padding-bottom: 0;
-  }
-  .h2 {
-    font-size: 34px;
-  }
-  .h2Sm {
-    font-size: 30px;
-  }
-  .lead,
-  .leadAside {
-    font-size: 18px;
-  }
   .glassGrid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -363,7 +357,7 @@
   }
   .whyList {
     padding: 4px 20px;
-    border-radius: 18px;
+    border-radius: var(--radius-md);
   }
   .whyItem {
     padding: 22px 0;

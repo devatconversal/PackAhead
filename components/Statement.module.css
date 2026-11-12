@@ -3,18 +3,16 @@
   background: var(--surface);
 }
 
+/* Spans the full 12 columns. */
 .text {
-  max-width: 1180px;
-  padding: 110px 0;
+  padding: var(--space-section) 0;
   font-weight: 400;
   font-size: 44px;
   line-height: 1.2;
-  letter-spacing: -0.025em;
-}
+  }
 
 @media (max-width: 900px) {
   .text {
     font-size: 30px;
-    padding: 72px 0;
   }
 }

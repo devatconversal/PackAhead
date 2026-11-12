@@ -1,15 +1,17 @@
 .section {
-  padding-bottom: 120px;
+  padding-bottom: var(--space-section);
 }
 
+/* A light blue card spanning the full grid; its padding is the card's own
+   inner margin, not part of the page grid. */
 .band {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
+  gap: var(--space-title);
   flex-wrap: wrap;
   padding: 48px;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   background: var(--tint-blue);
 }
 
@@ -27,13 +29,10 @@
 }
 
 @media (max-width: 720px) {
-  .section {
-    padding-bottom: 72px;
-  }
   .band {
     gap: 28px;
     padding: 28px 20px;
-    border-radius: 18px;
+    border-radius: var(--radius-md);
   }
   .copy {
     flex-basis: 100%;
