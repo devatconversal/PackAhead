@@ -5,7 +5,7 @@ const STATS = [
   { value: "13", label: "partners" },
   { value: "4", label: "years, starting September 2026" },
   { value: "TRL 7", label: "demonstration of the cellulose films" },
-  { value: "2032", label: "target for commercialisation at scale" },
+  { value: "2032", label: "commercialisation at scale" },
 ];
 
 export default function Numbers() {
