@@ -14,8 +14,7 @@
   border-radius: inherit;
 }
 
-/* Header content uses .header-container: outside the page grid on purpose
-   (see --header-* in globals.css). */
+/* Header content uses .frame-container: it sits on the page grid. */
 .inner {
   position: relative;
   z-index: 1;
@@ -55,7 +54,7 @@
 .facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px; /* header sits outside the page grid: own spacing */
+  gap: var(--gutter);
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }

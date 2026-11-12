@@ -45,13 +45,12 @@
   --frame-inset: 14px;
   --frame-margin: calc(var(--grid-margin) - var(--frame-inset));
 
-  /* Deliberate deviation: headers and footer do NOT follow the page grid.
-     Header content (logo, nav, title, facts): max 1520px wide, 40px side
-     padding inside the frame → starts 54px from the screen edge.
-     Footer content: max 1440px wide, 44px side padding inside the frame
-     → starts 58px from the screen edge.
-     To put them on the grid instead, use .frame-container in PageHeader,
-     Hero and FramedPanel. */
+  /* Headers and footer currently sit ON the page grid (.frame-container).
+     Alternative, not in use: put them outside the grid with their old
+     sizes by using .header-container in PageHeader and Hero, and
+     .footer-container in FramedPanel:
+       header: max 1520px, 40px padding → starts 54px from the edge
+       footer: max 1440px, 44px padding → starts 58px from the edge */
   --header-max: 1520px;
   --header-padding: 40px;
   --footer-max: 1440px;

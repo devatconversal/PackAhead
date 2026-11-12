@@ -23,7 +23,7 @@ export default function FramedPanel({
     <div className={styles.outer} style={flushTop ? { paddingTop: 0 } : undefined}>
       <div id={id} className={styles.panel}>
         {parallax ? <ParallaxAurora /> : <AuroraBackground />}
-        <div className={`footer-container ${styles.inner}`}>{children}</div>
+        <div className={`frame-container ${styles.inner}`}>{children}</div>
       </div>
     </div>
   );
