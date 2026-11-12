@@ -15,8 +15,8 @@ export default function Partners() {
             </h2>
             <div className={styles.copy}>
               <p className={styles.text}>
-                The consortium covers enzyme engineering, film production, recycling
-                and market implementation. PackAhead also works with the S3
+                The consortium covers enzyme engineering, film production, recycling,
+                AI &amp; digitalisation and market implementation. PackAhead also works with the S3
                 Partnership Food Packaging, a European network of cluster
                 organisations.
               </p>
