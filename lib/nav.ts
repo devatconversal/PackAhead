@@ -7,7 +7,7 @@ export const NAV_LINKS = [
 
 export const CONTACT_HREF = "/contact";
 
-export const LINKEDIN_HREF = "https://www.linkedin.com/";
+export const LINKEDIN_HREF = "https://www.linkedin.com/company/packahead/";
 
 // No privacy or cookie pages exist yet; point these at them once written.
 export const PRIVACY_HREF = "#";

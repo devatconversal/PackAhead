@@ -37,7 +37,10 @@ export default function PageHeader({
           </div>
 
           {facts && (
-            <div className={`${styles.facts} ${wideLastFact ? styles.factsWideLast : ""}`}>
+            <div
+              className={`${styles.facts} ${wideLastFact ? styles.factsWideLast : ""}`}
+              style={{ "--fact-count": facts.length } as React.CSSProperties}
+            >
               {facts.map((fact) => (
                 <div key={fact.value} className={styles.fact}>
                   <span className={styles.factValue}>{fact.value}</span>

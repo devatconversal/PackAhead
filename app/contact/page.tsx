@@ -12,18 +12,9 @@ export const metadata: Metadata = {
     "A question about the project, a press request or an idea for working together? Send a message and the right partner will get back to you.",
 };
 
-const CONTACTS = [
-  {
-    label: "Coordinator",
-    lines: ["VTT Technical Research Centre of Finland", "Project coordination team"],
-    email: "info@packahead.eu",
-  },
-  { label: "Press and media", lines: ["Communication team, SPI"], email: "press@packahead.eu" },
-  {
-    label: "Network",
-    lines: ["Pack4Food, S3 Partnership on Food Packaging"],
-    email: "partnerships@packahead.eu",
-  },
+const CONTACTS: { label: string; lines: string[]; email?: string }[] = [
+  { label: "Coordinator", lines: ["VTT Technical Research Centre of Finland"] },
+  { label: "Communication", lines: [], email: "info@packahead.eu" },
 ];
 
 export default function ContactPage() {
@@ -55,9 +46,11 @@ export default function ContactPage() {
                         {line}
                       </span>
                     ))}
-                    <a href={`mailto:${c.email}`} className={`${ui.visit} ${styles.mail}`}>
-                      {c.email} <span className={ui.arr} aria-hidden="true">→</span>
-                    </a>
+                    {c.email && (
+                      <a href={`mailto:${c.email}`} className={`${ui.visit} ${styles.mail}`}>
+                        {c.email} <span className={ui.arr} aria-hidden="true">→</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}

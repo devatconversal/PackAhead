@@ -6,13 +6,6 @@ import { PRIVACY_HREF } from "@/lib/nav";
 import ui from "@/components/ui.module.css";
 import styles from "./contact.module.css";
 
-const TOPICS = [
-  "A question about the project",
-  "Press and media",
-  "Partnerships and connected initiatives",
-  "Something else",
-];
-
 /**
  * Contact form. No mail backend is connected yet: submitting validates the
  * fields and shows a confirmation. Wire `onSubmit` to a route handler or
@@ -43,14 +36,7 @@ export default function ContactForm() {
             <Field id="c-email" label="EMAIL" type="email" autoComplete="email" required />
             <Field id="c-org" label="ORGANISATION" autoComplete="organization" />
           </div>
-          <div className={styles.field}>
-            <label htmlFor="c-topic" className={styles.label}>WHAT IS IT ABOUT?</label>
-            <select id="c-topic" name="topic" className={styles.input}>
-              {TOPICS.map((t) => (
-                <option key={t}>{t}</option>
-              ))}
-            </select>
-          </div>
+          <Field id="c-subject" label="SUBJECT" required />
           <div className={styles.field}>
             <label htmlFor="c-msg" className={styles.label}>MESSAGE</label>
             <textarea id="c-msg" name="message" rows={6} className={`${styles.input} ${styles.textarea}`} required />

@@ -118,11 +118,40 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
   margin: 0;
   padding: 0 16px 40px 0;
   list-style: none;
   overflow-y: scroll;
+}
+
+/* One group per country: a small heading, then that country's partners. */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groupTitle {
+  font-weight: 500;
+  font-size: var(--label-size);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.groupTitleOn {
+  color: var(--blue);
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* Always-visible custom scrollbar (Chrome, Safari, Edge). The standard
@@ -296,6 +325,15 @@
   right: 18px;
 }
 
+/* A pin can stand for several partners (e.g. Gent): one name per line. */
+.pinTipName {
+  display: block;
+}
+
+.pinTipName + .pinTipName {
+  margin-top: 4px;
+}
+
 .inset {
   position: absolute;
   right: 28px;
@@ -373,8 +411,37 @@
     width: auto;
     margin-top: 16px;
   }
-  .pinTip {
-    font-size: 12px;
-    padding: 6px 10px;
+  /* Phones: no partner list next to/under the map. Tapping a pin shows
+     the partner name in a larger label instead. */
+  .listWrap {
+    display: none;
   }
+  .pinTip {
+    width: max-content;
+    max-width: 180px;
+    white-space: normal;
+    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  /* Pins in the right half of the map show their label to the left, so it
+     stays inside the screen. */
+  .pinTipFlipMobile {
+    left: auto;
+    right: 18px;
+  }
+  /* Pins near the top of the map show their label below the pin, so it
+     does not cover the text above the map. */
+  .pinTipBelowMobile {
+    bottom: auto;
+    top: 18px;
+  }
+  .pinTip.pinTipMobileOnly {
+    display: block;
+  }
+}
+
+/* The Incheon label is only needed on phones (desktop has the list). */
+.pinTipMobileOnly {
+  display: none;
 }

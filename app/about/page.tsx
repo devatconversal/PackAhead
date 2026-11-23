@@ -91,6 +91,21 @@ const MILESTONES = [
   { when: "2032", title: "On the market", text: "The ambition: digital tools and products deployed at scale.", future: true },
 ];
 
+// Moved here from Connected initiatives (client feedback, Nov 2026).
+const FRAMEWORK = [
+  {
+    title: "Programme",
+    text: "Horizon Europe, Cluster 6: Food, Bioeconomy, Natural Resources, Agriculture and Environment",
+  },
+  { title: "Area", text: "Bio-based innovation systems in the EU bioeconomy" },
+  {
+    title: "Topic",
+    text: "Digitalisation and AI of climate-neutral bio-based value chains (HORIZON-CL6-2025-01-CIRCBIO-09)",
+  },
+  { title: "Action type", text: "Innovation Action" },
+  { title: "Regulation", text: "Packaging designed to comply with the EU Packaging and Packaging Waste Regulation" },
+];
+
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
 export default function AboutPage() {
@@ -231,6 +246,41 @@ export default function AboutPage() {
                 <span className={ui.body}>{row.value}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EU framework */}
+      <section id="framework" className={`${ui.section} ${ui.flushTop}`}>
+        <div className={ui.greyBand}>
+          <div className={`container ${ui.why}`}>
+            <div className={ui.whyCopy}>
+              <h2 className={ui.h2}>
+                Part of a bigger <br />
+                European picture
+              </h2>
+              <p className={ui.lead}>
+                PackAhead is an Innovation Action funded by the European Union through
+                Horizon Europe. Its results feed into Europe&apos;s move towards a circular,
+                climate-neutral bioeconomy.
+              </p>
+              <a
+                href="https://cordis.europa.eu/project/id/101287475"
+                className={ui.visit}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View the project on CORDIS <span className={ui.arr} aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div className={ui.whyList}>
+              {FRAMEWORK.map((f) => (
+                <div key={f.title} className={ui.whyItem}>
+                  <h3 className={ui.cardTitleLg}>{f.title}</h3>
+                  <p className={ui.body}>{f.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

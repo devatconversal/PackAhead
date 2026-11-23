@@ -10,15 +10,9 @@ const ITEMS = [
     href: "/connected-initiatives#network",
   },
   {
-    label: "Biotech infrastructure",
-    title: "IBISBA",
-    text: "The European biotech accelerator whose robots and labs build and test the production strains behind the project's enzymes.",
-    href: "/connected-initiatives#infrastructure",
-  },
-  {
-    label: "Same EU call",
-    title: "Sister projects",
-    text: "Horizon Europe projects that bring artificial intelligence to other climate-neutral, bio-based value chains.",
+    label: "Sister project · same EU call",
+    title: "BioValueAI",
+    text: "A Horizon Europe project that brings AI and digital twins to other climate-neutral, bio-based value chains.",
     href: "/connected-initiatives#projects",
   },
 ];
